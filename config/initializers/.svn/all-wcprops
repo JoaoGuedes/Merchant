@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/repos/ldso11t3g2/!svn/ver/1/site/config/initializers
+END
+inflections.rb
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/repos/ldso11t3g2/!svn/ver/1/site/config/initializers/inflections.rb
+END
+session_store.rb
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/repos/ldso11t3g2/!svn/ver/1/site/config/initializers/session_store.rb
+END
+secret_token.rb
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/repos/ldso11t3g2/!svn/ver/1/site/config/initializers/secret_token.rb
+END
+backtrace_silencers.rb
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/repos/ldso11t3g2/!svn/ver/1/site/config/initializers/backtrace_silencers.rb
+END
+mime_types.rb
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/repos/ldso11t3g2/!svn/ver/1/site/config/initializers/mime_types.rb
+END
+wrap_parameters.rb
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/repos/ldso11t3g2/!svn/ver/1/site/config/initializers/wrap_parameters.rb
+END

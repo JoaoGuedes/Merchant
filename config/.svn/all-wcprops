@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/repos/ldso11t3g2/!svn/ver/1/site/config
+END
+routes.rb
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/repos/ldso11t3g2/!svn/ver/1/site/config/routes.rb
+END
+database.yml
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/repos/ldso11t3g2/!svn/ver/1/site/config/database.yml
+END
+application.rb
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/repos/ldso11t3g2/!svn/ver/1/site/config/application.rb
+END
+boot.rb
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/repos/ldso11t3g2/!svn/ver/1/site/config/boot.rb
+END
+environment.rb
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/repos/ldso11t3g2/!svn/ver/1/site/config/environment.rb
+END
