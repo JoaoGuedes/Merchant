@@ -18,30 +18,30 @@ class ItemsControllerTest < ActionController::TestCase
 
   test "should create item" do
     assert_difference('Item.count') do
-      post :create, :item => @item.attributes
+      post :create, item: @item.attributes
     end
 
     assert_redirected_to item_path(assigns(:item))
   end
 
   test "should show item" do
-    get :show, :id => @item.to_param
+    get :show, id: @item.to_param
     assert_response :success
   end
 
   test "should get edit" do
-    get :edit, :id => @item.to_param
+    get :edit, id: @item.to_param
     assert_response :success
   end
 
   test "should update item" do
-    put :update, :id => @item.to_param, :item => @item.attributes
+    put :update, id: @item.to_param, item: @item.attributes
     assert_redirected_to item_path(assigns(:item))
   end
 
   test "should destroy item" do
     assert_difference('Item.count', -1) do
-      delete :destroy, :id => @item.to_param
+      delete :destroy, id: @item.to_param
     end
 
     assert_redirected_to items_path

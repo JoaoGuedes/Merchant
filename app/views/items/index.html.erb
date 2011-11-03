@@ -2,7 +2,13 @@
 
 <table>
   <tr>
-    <th>Name</th>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Tradeable</th>
+    <th>Sellable</th>
+    <th>Date</th>
+    <th>Collection</th>
+    <th>Photo</th>
     <th></th>
     <th></th>
     <th></th>
@@ -10,10 +16,16 @@
 
 <% @items.each do |item| %>
   <tr>
-    <td><%= item.name %></td>
+    <td><%= item.title %></td>
+    <td><%= item.description %></td>
+    <td><%= item.tradeable %></td>
+    <td><%= item.sellable %></td>
+    <td><%= item.date %></td>
+    <td><%= item.collection_id %></td>
+    <td><%= item.photo_id %></td>
     <td><%= link_to 'Show', item %></td>
     <td><%= link_to 'Edit', edit_item_path(item) %></td>
-    <td><%= link_to 'Destroy', item, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Destroy', item, confirm: 'Are you sure?', method: :delete %></td>
   </tr>
 <% end %>
 </table>
