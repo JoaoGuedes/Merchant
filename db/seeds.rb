@@ -6,7 +6,21 @@
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Mayor.create(:name => 'Emanuel', :city => cities.first)
 
-categories = Category.create([
+Photo.create([
+            { :url => 'http://files-cdn.formspring.me/profile/20110331/n4d94c1828d625_medium.jpg' },
+            { :url => 'http://a1.twimg.com/profile_images/1146352354/FES_normal.jpg' },
+            { :url => 'http://imgc.classistatic.com/cps/kjc/111010/741r1/7970h4_14.jpeg' },
+            { :url => 'http://www.documof.com/wp-content/uploads/2011/01/bonehoard-64x64.jpg' },
+            { :url => 'http://thumbs.marktplaats.com/kopen/thumbs/3/1d/1162289619.jpg' },
+            { :url => 'http://images.deals.woot.com/78c537c9-2c52-4f61-8a98-56117844e6a9.jpg'}            
+            ])
+            
+User.create([
+            { :name => 'Joao Pedro', :city => 'Porto', :email => 'joaopedro@gmail.com', :password => 'abcd', :photo_id => '1' },
+            { :name => 'Fernando Santos', :city => 'Gondomar', :email => 'fsantos@gmail.com', :password => 'abcd', :photo_id => '2' }
+            ])
+
+Category.create([
                               { :name => 'Antiques'},
                               { :name => 'Artwork'},
                               { :name => 'Cards'},
@@ -25,3 +39,15 @@ categories = Category.create([
                               { :name => 'Toys & Games'},
                               { :name => 'Other'},  
                               ])
+
+Collection.create([
+          { :title => 'Discos', :description => 'Os meus discos favoritos', :visibility => false, :user_id => '1', :category_id => '13' },
+          { :title => 'Cartas Magic', :description => 'Colecao 2010', :visibility => false, :user_id => '2', :category_id => '3' }  
+  ])
+  
+Item.create([
+          { :title => 'Nirvana - Bleach', :description => '#50/540', :tradeable => false, :sellable => false, :collection_id => '1', :photo_id => '5' },
+          { :title => 'Queen', :description => '#54/190', :tradeable => false, :sellable => false, :collection_id => '1', :photo_id => '6' },
+          { :title => 'Kijii', :description => '#01/540', :tradeable => false, :sellable => false, :collection_id => '2', :photo_id => '3' },
+          { :title => 'White Weenie Quest', :description => '#54/190', :tradeable => false, :sellable => false, :collection_id => '2', :photo_id => '4' }
+  ])

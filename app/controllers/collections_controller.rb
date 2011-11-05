@@ -12,6 +12,16 @@ class CollectionsController < ApplicationController
 
   # GET /collections/1
   # GET /collections/1.json
+  def showbyname
+    category = Category.where("name=?", params[:name]).first
+    @collections = Collection.where("category_id=?", category.id)
+
+    respond_to do |format|
+      format.html # showbyname.html.erb
+      format.json { render json: @collections.to_json(:only => [:title, :description, :visibility, :user]) }
+    end
+  end
+  
   def show
     @collection = Collection.find(params[:id])
 
@@ -20,7 +30,6 @@ class CollectionsController < ApplicationController
       format.json { render json: @collection }
     end
   end
-
   # GET /collections/new
   # GET /collections/new.json
   def new

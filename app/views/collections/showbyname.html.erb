@@ -1,0 +1,21 @@
+<h1>Listing collections by category</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Visibility</th>
+    <th>User</th>
+  </tr>
+
+<% @collections.each do |collection| %>
+  <tr>
+    <td><%= collection.title %></td>
+    <td><%= collection.description %></td>
+    <td><%= collection.visibility %></td>
+    <td><%= collection.user_id %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
