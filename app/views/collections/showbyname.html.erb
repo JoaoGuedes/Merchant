@@ -5,7 +5,9 @@
     <th>Title</th>
     <th>Description</th>
     <th>Visibility</th>
+	<th>Date</th>
     <th>User</th>
+	<th>Photos</th>
   </tr>
 
 <% @collections.each do |collection| %>
@@ -13,7 +15,11 @@
     <td><%= collection.title %></td>
     <td><%= collection.description %></td>
     <td><%= collection.visibility %></td>
-    <td><%= collection.user_id %></td>
+	<td><%= collection.created_at %></td>
+    <td><%= collection.user.name %></td>
+<% collection.items.each do |item| %>
+<td><%= image_tag item.photo.url %></td>
+<% end %>
   </tr>
 <% end %>
 </table>

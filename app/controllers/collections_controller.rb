@@ -15,10 +15,31 @@ class CollectionsController < ApplicationController
   def showbyname
     category = Category.where("name=?", params[:name]).first
     @collections = Collection.where("category_id=?", category.id)
-
+    #@collections = Collection.joins(:user, :items => :photo).where("category_id=?", category.id).select('collections.title, collections.description, visibility, users.name, url')
     respond_to do |format|
       format.html # showbyname.html.erb
-      format.json { render json: @collections.to_json(:only => [:title, :description, :visibility, :user]) }
+      #format.json { render json: @collections }
+      #format.json { render json: @collections.to_json(:only => [:title, :description, :visibility, :user]) }
+      format.json { 
+        render :json => @collections.to_json(
+          :include => {
+              :user => { 
+                :only => :name 
+              },
+              :items => {
+                :include => {
+                    :photo => {
+                      :only => :url
+                    }
+                  },
+                :only => :title
+              }
+          },
+          
+          :only => [:title, :description, :created_at, :visibility]
+          
+          )
+      }
     end
   end
   
