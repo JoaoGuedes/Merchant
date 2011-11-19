@@ -10,8 +10,6 @@ Site::Application.routes.draw do
      match 'collections/byCategory/:name' => 'collections#showbyname'
   resources :collections
 
-  resources :users
-
   #get "home/index"
 
   #resources :categories
