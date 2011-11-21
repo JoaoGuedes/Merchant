@@ -3,10 +3,11 @@ source 'http://rubygems.org'
 LANG="en_US.UTF-8"
 LC_ALL="en_US.UTF-8"
 
-gem 'rails', '3.1.1'
+#gem 'rails', '3.1.1'
 
 # Bundle edge Rails instead:
-# gem 'rails',     :git => 'git://github.com/rails/rails.git'
+gem 'rails'
+#,     :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
 
