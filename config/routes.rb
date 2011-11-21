@@ -1,13 +1,15 @@
 Site::Application.routes.draw do
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   get '/users/auth/:provider' => 'users/omniauth_callbacks#passthru'
+  
+  match 'items/byCollection/:id' => 'items#showbyid'
   resources :items
 
   resources :photos
 
   resources :categories
 
-     match 'collections/byCategory/:name' => 'collections#showbyname'
+  match 'collections/byCategory/:name' => 'collections#showbyname'
   resources :collections
 
   #get "home/index"

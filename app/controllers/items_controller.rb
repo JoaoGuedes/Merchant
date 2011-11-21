@@ -21,6 +21,17 @@ class ItemsController < ApplicationController
     end
   end
 
+  # GET /items/byCollection/1
+  # GET /items/byCollection/1.json
+  def showbyid
+    @items = Item.where("collection_id=?", params[:id])
+   
+    respond_to do |format|
+      format.html # showbyname.html.erb
+      format.json { @items }
+    end
+  end
+
   # GET /items/new
   # GET /items/new.json
   def new

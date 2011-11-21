@@ -10,16 +10,14 @@ class CollectionsController < ApplicationController
     end
   end
 
-  # GET /collections/1
-  # GET /collections/1.json
+  # GET /collections/byCategory/Records
+  # GET /collections/byCategory/Records.json
   def showbyname
     category = Category.where("name=?", params[:name]).first
     @collections = Collection.where("category_id=?", category.id)
-    #@collections = Collection.joins(:user, :items => :photo).where("category_id=?", category.id).select('collections.title, collections.description, visibility, users.name, url')
+   
     respond_to do |format|
       format.html # showbyname.html.erb
-      #format.json { render json: @collections }
-      #format.json { render json: @collections.to_json(:only => [:title, :description, :visibility, :user]) }
       format.json { 
         render :json => @collections.to_json(
           :include => {
@@ -36,7 +34,7 @@ class CollectionsController < ApplicationController
               }
           },
           
-          :only => [:title, :description, :created_at, :visibility]
+          :only => [:title, :description, :created_at, :visibility, :id]
           
           )
       }
