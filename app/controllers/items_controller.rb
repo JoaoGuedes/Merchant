@@ -27,8 +27,8 @@ class ItemsController < ApplicationController
     @items = Item.where("collection_id=?", params[:id])
    
     respond_to do |format|
-      format.html # showbyname.html.erb
-      format.json { @items }
+      format.html # showbyid.html.erb
+      format.json { render json: @items }
     end
   end
 
