@@ -1,4 +1,4 @@
-cd .source 'http://rubygems.org'
+source 'http://rubygems.org'
 
 LANG="en_US.UTF-8"
 LC_ALL="en_US.UTF-8"
