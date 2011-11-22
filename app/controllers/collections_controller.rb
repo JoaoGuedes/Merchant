@@ -27,7 +27,7 @@ class CollectionsController < ApplicationController
               :items => {
                 :include => {
                     :photo => {
-                      :only => :url
+                      :only => :url_thumb
                     }
                   },
                 :only => :title
