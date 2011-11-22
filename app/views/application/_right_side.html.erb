@@ -1,6 +1,8 @@
-<strong>Categories</strong>
+<center>
+<h3>Categories</h3>
 
-<ul>
-  <li>"um"</li>
-  <li>"dois"</li>
-</ul>
+<% Category.all.each do |category| %>
+    <%= link_to category.name, collections_path + "/byCategory/" + category.name %>
+    <br>
+<% end %>
+</center>
