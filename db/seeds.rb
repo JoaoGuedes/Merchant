@@ -7,21 +7,21 @@
 #   Mayor.create(:name => 'Emanuel', :city => cities.first)
 
 Photo.create([
-            { :url => 'http://files-cdn.formspring.me/profile/20110331/n4d94c1828d625_medium.jpg' },
-            { :url => 'http://a1.twimg.com/profile_images/1146352354/FES_normal.jpg' },
-            { :url => 'http://imgc.classistatic.com/cps/kjc/111010/741r1/7970h4_14.jpeg' },
-            { :url => 'http://www.documof.com/wp-content/uploads/2011/01/bonehoard-64x64.jpg' },
-            { :url => 'http://thumbs.marktplaats.com/kopen/thumbs/3/1d/1162289619.jpg' },
-            { :url => 'http://images.deals.woot.com/78c537c9-2c52-4f61-8a98-56117844e6a9.jpg'} ,
+            { :url_thumb => 'http://files-cdn.formspring.me/profile/20110331/n4d94c1828d625_medium.jpg' },
+            { :url_thumb => 'http://a1.twimg.com/profile_images/1146352354/FES_normal.jpg' },
+            { :url_thumb => 'http://imgc.classistatic.com/cps/kjc/111010/741r1/7970h4_14.jpeg' },
+            { :url_thumb => 'http://www.documof.com/wp-content/uploads/2011/01/bonehoard-64x64.jpg' },
+            { :url_thumb => 'http://thumbs.marktplaats.com/kopen/thumbs/3/1d/1162289619.jpg', :url => 'http://991.com/NewGallery/Nirvana-Bleach---White-Vi-121513.jpg' },
+            { :url_thumb => 'http://images.deals.woot.com/78c537c9-2c52-4f61-8a98-56117844e6a9.jpg' },
              
-            { :url => 'http://userserve-ak.last.fm/serve/64s/9834973.jpg' },
-            { :url => 'http://rockbaby.ru/media/images/performers/metallica/metallica_(black_album)_64x64.jpg'} ,
+            { :url_thumb => 'http://userserve-ak.last.fm/serve/64s/9834973.jpg' },
+            { :url_thumb => 'http://rockbaby.ru/media/images/performers/metallica/metallica_(black_album)_64x64.jpg', :url => 'http://www.licklibrary.com/Images/Resources/metal.jpg' } ,
             
-            { :url => 'http://bestuff.com/images/images_of_stuff/64x64crop/the-beatles-the-white-album-26269.jpg' },
-            { :url => 'http://userserve-ak.last.fm/serve/64s/54143641.jpg' },
-            { :url => 'http://promo.cffcs.com/AffImages/1/KISS_KISS.jpg' },
-            { :url => 'http://userserve-ak.last.fm/serve/64s/4044418.jpg' },
-            { :url => 'http://userserve-ak.last.fm/serve/64s/38463061.jpg' }
+            { :url_thumb => 'http://bestuff.com/images/images_of_stuff/64x64crop/the-beatles-the-white-album-26269.jpg' },
+            { :url_thumb => 'http://userserve-ak.last.fm/serve/64s/54143641.jpg' },
+            { :url_thumb => 'http://promo.cffcs.com/AffImages/1/KISS_KISS.jpg' },
+            { :url_thumb => 'http://userserve-ak.last.fm/serve/64s/4044418.jpg' },
+            { :url_thumb => 'http://userserve-ak.last.fm/serve/64s/38463061.jpg' }
             ])
             
 User.create([
