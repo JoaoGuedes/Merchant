@@ -32,28 +32,18 @@
 						<h2>Client Account</h2>
 					</div>
 					<div class="content">
-						<form id="form1" method="post" action="#">
-							<fieldset>
-							<legend>Sign-In</legend>
-							<label for="inputtext1">Client ID:</label>
-							<input id="inputtext1" type="text" name="inputtext1" value="" />
-							<label for="inputtext2">Password:</label>
-							<input id="inputtext2" type="password" name="inputtext2" value="" />
-							<input id="inputsubmit1" type="submit" name="inputsubmit1" value="Sign In" />
-							<p><a href="#">Forgot your password?</a></p>
-							</fieldset>
-						</form>
-					</div>
+                        <%= render "left_side" %>
+                    </div>
 				</div>
 				<!-- end #login -->
 				<div id="updates" class="boxed">
 					<div class="title">
-						<h2>Recent Updates</h2>
+						<h2>Messages</h2>
 					</div>
 					<div class="content">
 						<ul>
 							<li>
-								<h3>March 5, 2007</h3>
+								<h3>March 5, 2010</h3>
 								<p><a href="#">In posuere eleifend odio quisque semper augue mattis wisi maecenas ligula&#8230;</a></p>
 							</li>
 						</ul>
@@ -64,7 +54,7 @@
 			<!-- end #sidebar -->
 			<div id="main">
 				<div id="middle_page" class="post">
-					<div class="story"><img src="images/img09.jpg" alt="" width="120" height="120" class="left" />
+					<div class="story">
                         <%= yield %>
 					</div>
 
