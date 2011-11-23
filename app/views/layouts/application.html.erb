@@ -1,42 +1,98 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <title>Merchant</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+<div class="main">
+	<div class="header">
+		<div class="header_resize">
+			<div class="logo"><h1><a href="/">mer<span>chant</span><small>collections</small></a></h1></div>
+			<div class="nav_menu">
+				<ul>
+					<li class="active"><a href="#">Home</a></li>
+					<li><a href="#">SignUp</a></li>
+					<li><a href="#">SiteMap</a></li>
+					<li><a href="#">Contacts</a></li>
+					<li><a href="#">Help</a></li>
+				</ul>
+			</div>
+			<div class="clr"></div>
+		</div>
+	</div>
+	<div class="content">
+		<div class="content_resize">
+			<div id="sidebar">
+				<div id="login" class="boxed">
+					<div class="title">
+						<h2>Client Account</h2>
+					</div>
+					<div class="content">
+						<form id="form1" method="post" action="#">
+							<fieldset>
+							<legend>Sign-In</legend>
+							<label for="inputtext1">Client ID:</label>
+							<input id="inputtext1" type="text" name="inputtext1" value="" />
+							<label for="inputtext2">Password:</label>
+							<input id="inputtext2" type="password" name="inputtext2" value="" />
+							<input id="inputsubmit1" type="submit" name="inputsubmit1" value="Sign In" />
+							<p><a href="#">Forgot your password?</a></p>
+							</fieldset>
+						</form>
+					</div>
+				</div>
+				<!-- end #login -->
+				<div id="updates" class="boxed">
+					<div class="title">
+						<h2>Recent Updates</h2>
+					</div>
+					<div class="content">
+						<ul>
+							<li>
+								<h3>March 5, 2007</h3>
+								<p><a href="#">In posuere eleifend odio quisque semper augue mattis wisi maecenas ligula&#8230;</a></p>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<!-- end #updates -->
+			</div>
+			<!-- end #sidebar -->
+			<div id="main">
+				<div id="middle_page" class="post">
+					<div class="story"><img src="images/img09.jpg" alt="" width="120" height="120" class="left" />
+                        <%= yield %>
+					</div>
 
-  <div id="top">
-  
-    <h1>Merchant</h1>
-  
-  </div>
-
-  <div id="container">
-
-    <div id="right_side">
-      <%= render "right_side" %>
-    </div>
-
-    <div id="left_side">
-      <%= render "left_side" %>
-    </div>
-
-    <div id="content">
-	  <%= yield %>
-    </div>
-
-    <div class="clear"></div>
-  </div>
-  
-  <div id="footer">
-  
-    </center>Merchant - Copyright 2011</center>
-  
-  </div>
-
-
+				</div>
+			</div>
+			<!-- end #main -->
+			<div id="sidebar2">
+				<div id="categories" class="boxed">
+                      <%= render "right_side" %>
+				</div>
+			</div>
+			<div style="clear:both;">&nbsp;</div>
+		</div>
+	</div>
+	<div class="footer">
+		<div class="footer_resize">
+			<p class="lf">&copy; 2011 Merchant - All Rights Reserved.</p>
+				<ul class="fmenu">
+				<li class="active"><a href="#">Home</a></li>
+				<li><a href="#">Signup</a></li>
+				<li><a href="#">Sitemap</a></li>
+				<li><a href="#">Contacts</a></li>
+				<li><a href="#">Help</a></li>
+			</ul><br/>
+			<p class="lf"> All product and company names herein are trademark of their respective owners</p>
+		</div>
+		<div class="clr"></div>
+	</div>
+</div>
 </body>
 </html>

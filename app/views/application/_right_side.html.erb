@@ -1,8 +1,11 @@
-<center>
-<h3>Categories</h3>
+<div class="title">
+    <h2>Categories</h2>
+</div>
+<div class="content">
+    <ul>
+      <% Category.all.each do |category| %>
+          <li> <%= link_to category.name, collections_path + "/byCategory/" + category.name %></li>
+      <% end %>
+    </ul>
+</div>
 
-<% Category.all.each do |category| %>
-    <%= link_to category.name, collections_path + "/byCategory/" + category.name %>
-    <br>
-<% end %>
-</center>
