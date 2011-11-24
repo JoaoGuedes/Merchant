@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :id, :email, :password, :password_confirmation, :remember_me, :name,
-  :city, :about
+  :city, :about, :photo_id
   
   belongs_to :photo
   has_many :collections
@@ -16,7 +16,8 @@ class User < ActiveRecord::Base
     if user = User.find_by_email(data["email"])
       user
     else # Create a user with a stub password. 
-      User.create!(:email => data["email"], :name => data["name"], :password => Devise.friendly_token[0,20]) 
+      profilephoto = Photo.create(:url_thumb => "http://graph.facebook.com/" + data["id"] + "/picture")
+      User.create!(:email => data["email"], :photo_id => profilephoto.id, :name => data["name"], :password => Devise.friendly_token[0,20],) 
     end
   end
   
