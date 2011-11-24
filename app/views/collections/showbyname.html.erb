@@ -18,7 +18,7 @@
 	<td><%= collection.created_at %></td>
     <td><%= collection.user.name %></td>
 <% collection.items.each do |item| %>
-<td><%= image_tag item.photo.url %></td>
+<td><%= image_tag item.photo.url_thumb %></td>
 <% end %>
   </tr>
 <% end %>
