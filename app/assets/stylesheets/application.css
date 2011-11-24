@@ -1,189 +1,286 @@
-/*
- * This is a manifest file that'll automatically include all the stylesheets available in this directory
- * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
- * the top of the compiled file, but it's generally better to create a new file per style scope.
- *= require_self
- *= require_tree . 
-*/
+/* andreas09 v1.0 (Dec 10th 2005) - An open source template by Andreas Viklund - http://andreasviklund.com. Free to use for any purpose as long as the proper credits are given to the original author. */
 
-* {margin:0;padding:0}
-body {margin:0;padding:0;width:100%;color:#5f5f5f;font:normal 12px/1.8em Arial,Helvetica,sans-serif;background:url(bg.gif)}
-html, .main {padding:0;margin:0;background:#fff}
-.clr {clear:both;padding:0;margin:0;width:100%;font-size:0px;line-height:0px}
-h1 {margin:0;padding:24px 0 40px 40px;color:#249cd3;font:bold 40px/1.2em Arial,Helvetica,sans-serif;text-transform:uppercase}
-h1 a, h1 a:hover {color:#249cd3;text-decoration:none}
-h1 span {margin:0 4px;padding:26px 6px;color:#fff;background:#249cd3}
-h1 small {padding-left:8px;font:normal 13px/1.2em Arial,Helvetica,sans-serif}
-h2 {font:bold 24px Arial,Helvetica,sans-serif;color:#323a3f;padding:0;margin:0}
-p {margin:8px 0;padding:0 0 8px 0;font:normal 12px/1.8em Arial,Helvetica,sans-serif}
-a {color:#249cd3;text-decoration:underline}
-img.imgwh {margin:6px 16px 0 0;padding:3px;float:left;border:1px solid #dedede}
-.header, .hbg, .content, .footer, form, ol, ol li, ul {margin:0;padding:0}
-.header_resize, .content_resize, .footer_resize {margin:0 auto;padding:0 40px;width:970px}
-.content {background:url(hbg_bg.gif) repeat-x top}
-.header {background:#ebebeb url(header_bg.gif) repeat-x top}
-.header .logo {width:auto;float:left}
-.header img.hbgimg {padding:22px 28px 0 0;float:right}
-.header h2 {margin:0;padding:8px 0 0 0;font:bold 24px/1.5em Arial,Helvetica,sans-serif;color:#fff}
-.nav_menu {padding-top:84px;float:right;width:auto}
-.nav_menu ul {list-style:none}
-.nav_menu ul li {margin:0;padding:0 2px;float:left}
-.nav_menu ul li a {display:block;margin:0;padding:0 24px 0 8px;color:#737373;text-decoration:none;text-transform:uppercase;border-left:1px solid #737373}
-.nav_menu ul li a:hover, .nav_menu ul li.active a {color:#249cd3;border-left:1px solid #249cd3}
-.content_resize {padding: 25px 0;overflow:hidden;background:url(hbg_r_bg.jpg) no-repeat center top}
-.content .mainbar {margin:0;padding:0;float:left;width:630px}
-.content .mainbar .article, .content .sidebar .gadget {margin:0;padding:0 0 16px 0}
-.content .mainbar .article img {border:1px solid #dedede;padding:3px}
-.content .mainbar .article img.ilf {float:left;margin:0 16px 8px 0}
-.content .sidebar {margin:0;padding:0;float:right;width:236px}
-ul.sb_menu, ul.ex_menu {margin:0;padding:0;list-style:none;color:#959595}
-ul.sb_menu li, ul.ex_menu li {margin:2px 0;padding:3px 0}
-ul.sb_menu li a, ul.ex_menu li a {color:#5f5f5f;text-decoration:none}
-ul.sb_menu li a:hover, ul.ex_menu li a:hover {color:#249cd3;font-weight:bold}
-.content .mainbar .comment {margin:0;padding:16px 0 0 0}
-.content .mainbar .comment img.userpic {border:1px solid #dedede;margin:10px 16px 0 0;padding:0;float:left}
-.footer {padding-top:16px}
-.footer p.lf {margin:0;padding:0;float:right;width:auto}
-ul.fmenu {margin:0;padding-bottom:12px;list-style:none;float:left;width:auto}
-ul.fmenu li {margin:0;padding:0 2px;float:left}
-ul.fmenu li a {display:block;padding:4px 8px;color:#5f5f5f;text-decoration:none;font-weight:bold}
-ul.fmenu li a:hover, ul.fmenu li.active a {color:#249cd3}
-ol {list-style:none}
-ol li {display:block;clear:both}
-ol li label {display:block;margin:0;padding:16px 0 0 0}
-ol li input.text {width:480px;border:1px solid #c0c0c0;margin:2px 0;padding:5px 2px;height:16px;background:#fff}
-ol li textarea {width:480px;border:1px solid #c0c0c0;margin:2px 0;padding:2px;background:#fff}
-ol li .send {margin:16px 0 0 0}
-/* Boxed Style */
-.boxed {}
-.boxed .title {background:#3C74E6 url(img06.gif) repeat-x}
-.boxed .title h2 {height:23px;padding:12px 0 0 20px;text-transform:uppercase;font-size:1em;color:#fff}
-.boxed .content {padding:20px;border-top:1px solid #fff;background:url(img07.gif) repeat-x}
-/* Post */
-.post {}
-.post .title {background:#3C74E6 url(img06.gif) repeat-x;font-size:1em;text-transform:uppercase;color:#fff}
-.post .title span {display:block;height:28px;padding:12px 0 0 20px}
-.post .date {margin-top:-25px;padding-bottom:10px;padding-right:20px;text-align:right;font-size:x-small;color:#fff}
-.post .date .month {}
-.post .date .day {}
-.post .date .year {}
-.post .meta {clear:both}
-.post .meta p {margin:0;padding:10px 20px 40px 20px;border-top:1px dotted #ccc;line-height:normal;font-size:x-small}
-.post .story {padding-right:20px;padding-left:20px;border-top:1px solid #fff;background:url(img07.gif) repeat-x}
-/* Content > Main */
-#main {float:left;width:520px;padding-left:15px}
-/* Content > Main > Welcome */
-#middle_page {}
-/* Content > Main > Example */
-#sidebar {float:left;padding-left: 30px;width:200px}
-#sidebar .boxed .title h2 {background:url(img08.gif) no-repeat}
-/* Content > Sidebar2 */
-#sidebar2 {float:left;width:160px;padding-left:15px}
-#sidebar2 .boxed .title h2 {background:url(img10.gif) no-repeat right top}
-/*--------------------------------------------------
-  REQUIRED to hide the non-active tab content.
-  But do not hide them in the print stylesheet!
-  --------------------------------------------------*/
-.tabberlive .tabbertabhide {
- display:none;
+body {
+background:#8b8b8b;
+color:#303030;
+font:76% Verdana,Tahoma,Arial,sans-serif;
+margin:0;
+padding:0;
+text-align:center;
 }
 
-/*--------------------------------------------------
-  .tabber = before the tabber interface is set up
-  .tabberlive = after the tabber interface is set up
-  --------------------------------------------------*/
-.tabber {
-}
-.tabberlive {
- margin-top:1em;
+a {
+color:#505050;
+font-weight:bold;
+text-decoration:none;
 }
 
-/*--------------------------------------------------
-  ul.tabbernav = the tab navigation list
-  li.tabberactive = the active tab
-  --------------------------------------------------*/
-ul.tabbernav
-{
- margin:0;
- padding: 3px 0;
- border-bottom: 1px solid #778;
- font: bold 12px Verdana, sans-serif;
+a:hover {
+color:#808080;
+text-decoration:underline;
 }
 
-ul.tabbernav li
-{
- list-style: none;
- margin: 0;
- display: inline;
+p {
+line-height:1.5em;
+margin:0 0 15px;
 }
 
-ul.tabbernav li a
-{
- padding: 3px 0.5em;
- margin-left: 3px;
- border: 1px solid #778;
- border-bottom: none;
- background: #DDE;
- text-decoration: none;
+/*** Main container ***/
+
+#container {
+background:#f0f0f0 url(bodybg.jpg) repeat-x;
+color:#303030;
+margin:0;
+min-width:770px;
+padding:0;
+text-align:left;
+width:100%;
 }
 
-ul.tabbernav li a:link { color: #448; }
-ul.tabbernav li a:visited { color: #667; }
+/*** Header section ***/
 
-ul.tabbernav li a:hover
-{
- color: #000;
- background: #AAE;
- border-color: #227;
+#sitename {
+color:#ffffff;
+height:92px;
+margin:0 20px 10px;
+text-align:left;
 }
 
-ul.tabbernav li.tabberactive a
-{
- background-color: #fff;
- border-bottom: 1px solid #fff;
+#sitename h1,#sitename h2 {
+font-weight:400;
+letter-spacing:-2px;
+margin:0;
+padding:0;
 }
 
-ul.tabbernav li.tabberactive a:hover
-{
- color: #000;
- background: white;
- border-bottom: 1px solid white;
+#sitename h1 {
+font-size:2.4em;
+padding-top:20px;
 }
 
-/*--------------------------------------------------
-  .tabbertab = the tab content
-  Add style only after the tabber interface is set up (.tabberlive)
-  --------------------------------------------------*/
-.tabberlive .tabbertab {
- padding:5px;
- border:1px solid #aaa;
- border-top:0;
-
- /* If you don't want the tab size changing whenever a tab is changed
-    you can set a fixed height */
-
- /* height:200px; */
-
- /* If you set a fix height set overflow to auto and you will get a
-    scrollbar when necessary */
-
- /* overflow:auto; */
+#sitename h2 {
+font-size:1.6em;
 }
 
-/* If desired, hide the heading since a heading is provided by the tab */
-.tabberlive .tabbertab h2 {
- display:none;
-}
-.tabberlive .tabbertab h3 {
- display:none;
+/*** Horizontal menu ***/
+
+#mainmenu {
+float:left;
+margin-bottom:25px;
 }
 
-/* Example of using an ID to set different styles for the tabs on the page */
-.tabberlive#tab1 {
+#mainmenu ul {
+font-size:16px;
+margin:0;
+padding:0;
 }
-.tabberlive#tab2 {
+
+#mainmenu li {
+float:left;
+height:35px;
+list-style:none;
+margin:0;
+padding:0;
 }
-.tabberlive#tab2 .tabbertab {
- height:200px;
- overflow:auto;
+
+#mainmenu a {
+border-right:1px solid #b0b0b0;
+color:#606060;
+display:block;
+font-size:0.7em;
+padding:11px 10px 10px;
+text-transform:uppercase;
 }
+
+#mainmenu a:hover {
+background:#f0f0f0 url(menuhover.jpg) top left repeat-x;
+color:#505050;
+text-decoration:none;
+}
+
+#mainmenu a.current {
+background:#f0f0f0 url(menuhover.jpg) top left repeat-x;
+color:#505050;
+text-decoration:none;
+}
+
+/*** Content wrap ***/
+
+#wrap {
+clear:both;
+font-size:0.9em;
+padding:0;
+}
+
+/*** Sidebars ***/
+
+#leftside,#rightside {
+margin:0;
+padding:0 10px 10px;
+width:165px;
+}
+
+#leftside {
+float:left;
+margin-right:10px;
+}
+
+#rightside {
+float:right;
+margin-left:10px;
+}
+
+#leftside h1,#rightside h1 {
+color:#505050;
+font-size:1.6em;
+font-weight:bold;
+letter-spacing:-1px;
+margin:0 0 12px;
+}
+
+#leftside h2,#rightside h2 {
+font-size:1.1em;
+margin:0 0 20px;
+}
+
+#leftside p,#rightside p {
+font-size:0.9em;
+line-height:1.4em;
+margin:0 0 16px 10px;
+}
+
+.linklist {
+list-style:none;
+margin:0 0 16px 10px;
+padding:0;
+}
+
+.linklist li {margin-bottom:0.7em;}
+
+/*** Sidebar menu ***/
+
+.nav {
+background:#e8e9ea;
+border:1px solid #b0b0b0;
+color:#606060;
+display:block;
+margin-top:8px;
+padding:5px 4px 4px 10px;
+position:relative;
+text-transform:uppercase;
+width:140px;
+}
+
+.nav:hover,.active {
+background:#f8f9fa;
+border:1px solid #909090;
+color:#303030;
+text-decoration:none;
+}
+
+.sub {
+font-size:0.8em;
+letter-spacing:1px;
+margin:3px 0 2px 10px;
+padding:4px 2px 2px 8px;
+width:125px;
+}
+
+/*** Content ***/
+
+#content,#contentalt {
+background-color:#fafcff;
+border:1px solid #909090;
+color:#2a2a2a;
+padding:15px 20px 5px;
+}
+
+#content {margin:0 200px;}
+#contentalt {margin:0 200px 0 20px;}
+
+#content h1,#content h2,#contentalt h1,#contentalt h2 {
+background-color:inherit;
+color:#606060;
+font-size:1.8em;
+font-weight:bold;
+letter-spacing:-1px;
+margin:0 0 15px;
+padding:0;
+}
+
+#content h2,#contentalt h2 {
+font-size:1.6em;
+margin-bottom:10px;
+}
+
+#content img,#contentalt img {
+border:1px solid #b0b0b0;
+float:left;
+margin:5px 15px 6px;
+padding:5px;
+}
+
+/*** Footer ***/
+
+#footer {
+background:#8b8b8b url(footerbg.jpg) top left repeat-x;
+clear:both;
+color:#d0d0d0;
+font-size:0.9em;
+font-weight:bold;
+margin:0;
+padding:20px 0;
+text-align:center;
+width:100%;
+}
+
+#footer a {
+color:#d0d0d0;
+font-weight:bold;
+}
+
+/*** Various classes ***/
+
+.thumbnail {
+background:#fafbfc;
+border:1px solid #b0b0b0;
+margin:0 0 10px 10px;
+padding:5px;
+}
+
+.searchform {margin:0;}
+
+.searchbox {
+background:#f0f0f0;
+border:1px solid #b0b0b0;
+margin:0 4px 0 0;
+width:100px;
+}
+
+.searchbutton {
+background:#f0f0f0;
+border:1px solid #b0b0b0;
+}
+
+.clearingdiv {
+clear:both;
+height:30px;
+width:1px;
+}
+
+.hide {display:none;}
+
+/*** Text format ***/
+
+.intro {
+font-size:1.1em;
+font-weight:bold;
+letter-spacing:-1px;
+}
+
+.small {font-size:0.8em;}
+.large {font-size:1.4em;}
+.center {text-align:center;}
+.right {text-align:right;}
+
+/*** End of file ***/
