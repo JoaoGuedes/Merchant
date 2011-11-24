@@ -7,6 +7,8 @@ Site::Application.routes.draw do
 
   resources :photos
 
+  resources :administrations
+
   resources :categories
 
   match 'collections/byCategory/:name' => 'collections#showbyname'
