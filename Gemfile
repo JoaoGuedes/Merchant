@@ -6,7 +6,7 @@ LC_ALL="en_US.UTF-8"
 # Bundle edge Rails instead:
 gem 'rails'
 
-gem 'sqlite3'
+gem 'sqlite3', :group => [:development, :test]
 
 gem 'json'
 
