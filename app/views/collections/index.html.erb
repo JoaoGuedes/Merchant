@@ -2,23 +2,22 @@
 
 <h1><%= @title %></h1>
 
-
 <% @collections.each do |collection| %>
 <div class="usrData">
 	<%= image_tag collection.user.photo.url_thumb %><br />
 			<%= collection.user.name %><br />
 </div>
 <div class="collData">
-<h1><%= collection.title %></h1>
+<h1><%= link_to collection.title, collection %></h1>
 <%= collection.description %><br />
 
 <% if collection.visibility %>
-<%= image_tag "private.png", :alt => "Private collection" %>
-<% else %>
-<%= image_tag "public.png", :alt => "Public collection" %>
+	<%= image_tag "private.png", :alt => "Private collection" %>
+	<% else %>
+		<%= image_tag "public.png", :alt => "Public collection" %>
 <% end %>
-<!--<%= collection.visibility %><br /> 
-<%= collection.created_at %><br /> -->
+
+<!-- <%= collection.created_at %><br /> -->
 </div>
 <div class="collPhotos">
 <% collection.items[0,4].each do |item| %>

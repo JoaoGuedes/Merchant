@@ -17,14 +17,20 @@
 
 <p>
   <b>User:</b>
-  <%= @collection.user_id %>
+  <%= @collection.user.name %>
 </p>
 
 <p>
   <b>Category:</b>
-  <%= @collection.category_id %>
+  <%= @collection.category.name %>
 </p>
 
+<% @collection.items.each do |item| %>
+	<a rel="photo_group" href="<%= item.photo.url %>">
+	<%= image_tag item.photo.url_thumb %>
+	</a> 
+<% end %>
 
+<br />
 <%= link_to 'Edit', edit_collection_path(@collection) %> |
 <%= link_to 'Back', collections_path %>

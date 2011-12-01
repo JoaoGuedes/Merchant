@@ -1,5 +1,11 @@
 /* andreas09 v1.0 (Dec 10th 2005) - An open source template by Andreas Viklund - http://andreasviklund.com. Free to use for any purpose as long as the proper credits are given to the original author. */
 
+/*
+ *= require_self
+ *= require fancybox
+ *= require_tree .
+ */
+
 body {
 background:#8b8b8b;
 color:#303030;

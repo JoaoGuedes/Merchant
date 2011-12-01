@@ -1,7 +1,5 @@
 <h1><%= @title %></h1>
 
-
-
 	<% @collections.each do |collection| %>
 	<div class="usrData">
 		<%= image_tag collection.user.photo.url_thumb %><br />
@@ -16,8 +14,7 @@
 	<% else %>
 	<%= image_tag "public.png", :alt => "Public collection" %>
 	<% end %>
-	<!--<%= collection.visibility %><br /> 
-	<%= collection.created_at %><br /> -->
+	<%= collection.created_at %><br /> 
 	</div>
 	<div class="collPhotos">
 	<% collection.items[0,4].each do |item| %>
@@ -26,6 +23,5 @@
 	</div>
 	
 	<% end %>
-
 
 <br />
