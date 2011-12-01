@@ -3,7 +3,7 @@
 body {
 background:#8b8b8b;
 color:#303030;
-font:76% Verdana,Tahoma,Arial,sans-serif;
+font:76% LVerdana,Tahoma,Arial,sans-serif; 
 margin:0;
 padding:0;
 text-align:center;
@@ -25,6 +25,27 @@ line-height:1.5em;
 margin:0 0 15px;
 }
 
+/*** Collections ***/
+
+.usrData {
+	float:left;
+	margin:5px 15px 6px;
+	text-align: center;
+	padding:5px;
+}
+
+.collData {
+	margin:5px 15px 6px;
+	padding: 5px;	
+}
+.collData img {
+	margin-top: 10px;
+}
+
+.collPhotos {
+	margin:5px 84px 6px;
+	padding: 5px;
+}
 /*** Main container ***/
 
 #container {
@@ -123,6 +144,7 @@ width:165px;
 #leftside {
 float:left;
 margin-right:10px;
+text-align: center;
 }
 
 #rightside {
@@ -144,9 +166,9 @@ margin:0 0 20px;
 }
 
 #leftside p,#rightside p {
-font-size:0.9em;
+font-size:1.0em;
 line-height:1.4em;
-margin:0 0 16px 10px;
+margin:0 0px 10px 10px;
 }
 
 .linklist {
@@ -211,13 +233,6 @@ padding:0;
 #content h2,#contentalt h2 {
 font-size:1.6em;
 margin-bottom:10px;
-}
-
-#content img,#contentalt img {
-border:1px solid #b0b0b0;
-float:left;
-margin:5px 15px 6px;
-padding:5px;
 }
 
 /*** Footer ***/

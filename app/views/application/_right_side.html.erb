@@ -1,8 +1,6 @@
 <div class="content">
-    <ul>
       <% Category.all.each do |category| %>
-          <li> <%= link_to category.name, collections_path + "/byCategory/" + category.name %></li>
+          <p><%= link_to category.name, collections_path + "/byCategory/" + category.name %></p>
       <% end %>
-    </ul>
 </div>
 

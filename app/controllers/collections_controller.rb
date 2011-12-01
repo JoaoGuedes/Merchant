@@ -15,7 +15,7 @@ class CollectionsController < ApplicationController
   def showbyname
     category = Category.where("name=?", params[:name]).first
     @collections = Collection.where("category_id=?", category.id)
-   
+    @title = params[:name]
     respond_to do |format|
       format.html # showbyname.html.erb
       format.json { 

@@ -1,31 +1,29 @@
 <h2 class="title"><span>Listing collections</span></h2>
 
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Description</th>
-    <th>Visibility</th>
-    <th>User</th>
-    <th>Category</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<h1><%= @title %></h1>
+
 
 <% @collections.each do |collection| %>
-  <tr>
-    <td><%= collection.title %></td>
-    <td><%= collection.description %></td>
-    <td><%= collection.visibility %></td>
-    <td><%= collection.user_id %></td>
-    <td><%= collection.category_id %></td>
-    <td><%= link_to 'Show', collection %></td>
-    <td><%= link_to 'Edit', edit_collection_path(collection) %></td>
-    <td><%= link_to 'Destroy', collection, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
+<div class="usrData">
+	<%= image_tag collection.user.photo.url_thumb %><br />
+			<%= collection.user.name %><br />
+</div>
+<div class="collData">
+<h1><%= collection.title %></h1>
+<%= collection.description %><br />
+
+<% if collection.visibility %>
+<%= image_tag "private.png", :alt => "Private collection" %>
+<% else %>
+<%= image_tag "public.png", :alt => "Public collection" %>
 <% end %>
-</table>
-
+<!--<%= collection.visibility %><br /> 
+<%= collection.created_at %><br /> -->
+</div>
+<div class="collPhotos">
+<% collection.items[0,4].each do |item| %>
+	<%= image_tag item.photo.url_thumb %>
+<% end %>
+</div>
 <br />
-
-<%= link_to 'New Collection', new_collection_path %>
+<% end %>
