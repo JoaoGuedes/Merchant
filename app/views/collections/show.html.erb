@@ -1,21 +1,21 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Title:</b>
-  <%= @collection.title %>
+  <h1>  <%= @collection.title %> </h1>
 </p>
 
 <p>
-  <b>Description:</b>
-  <%= @collection.description %>
+  <h3>  <%= @collection.description %> </h3>
 </p>
 
-<p>
-  <b>Visibility:</b>
-  <%= @collection.visibility %>
-</p>
+<!--
+<% if @collection.visibility %>
+<%= image_tag "private.png", :alt => "Private collection" %>
+<% else %>
+<%= image_tag "public.png", :alt => "Public collection" %>
+<% end %>
 
-<p>
+ <p>
   <b>User:</b>
   <%= @collection.user.name %>
 </p>
@@ -23,14 +23,15 @@
 <p>
   <b>Category:</b>
   <%= @collection.category.name %>
-</p>
-
+</p> -->
+<br />
+<div  class="items">
 <% @collection.items.each do |item| %>
-	<a rel="photo_group" href="<%= item.photo.url %>">
-	<%= image_tag item.photo.url_thumb %>
+	<a rel="photo_group" href="<%= item.photo.url %>" title="<h1><%= item.title %></h1><br/><%= item.description %>">
+	<%= image_tag item.photo.url_thumb, :class => 'itemPhotos' %>
 	</a> 
 <% end %>
-
-<br />
-<%= link_to 'Edit', edit_collection_path(@collection) %> |
-<%= link_to 'Back', collections_path %>
+</div><br />
+<br /><br />
+<!-- <%= link_to 'Edit', edit_collection_path(@collection) %> | -->
+<%= link_to 'Back', collections_path %> 

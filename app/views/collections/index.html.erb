@@ -21,7 +21,9 @@
 </div>
 <div class="collPhotos">
 <% collection.items[0,4].each do |item| %>
-	<%= image_tag item.photo.url_thumb %>
+<a rel="photo_group" href="<%= item.photo.url %>" title="<h1><%= item.title %></h1><br/><%= item.description %>">
+<%= image_tag item.photo.url_thumb, :class => 'itemPhotos' %>
+</a>
 <% end %>
 </div>
 <br />
