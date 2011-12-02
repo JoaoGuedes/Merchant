@@ -1,6 +1,8 @@
 class CollectionsController < ApplicationController
   # GET /collections
   # GET /collections.json
+  before_filter :authenticate_user!, :only => :new
+  
   def index
     @collections = Collection.all
 
