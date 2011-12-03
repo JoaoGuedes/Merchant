@@ -22,6 +22,10 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+# Gems to Admin in Rails >= 3.1
+gem 'activeadmin'
+gem "meta_search",    '>= 1.1.0.pre'
+
 gem 'jquery-rails'
 gem "fancybox-rails"
 

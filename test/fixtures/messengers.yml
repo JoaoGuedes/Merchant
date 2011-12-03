@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  user_from: 1
+  user_to: 1
+  title: MyString
+  body: MyString
+  read: false
+  date: 2011-12-03 06:22:23
+
+two:
+  user_from: 1
+  user_to: 1
+  title: MyString
+  body: MyString
+  read: false
+  date: 2011-12-03 06:22:23
