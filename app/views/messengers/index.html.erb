@@ -1,0 +1,33 @@
+<h1>Listing messengers</h1>
+
+<table>
+  <tr>
+    <th>User from</th>
+    <th>User to</th>
+    <th>Title</th>
+    <th>Body</th>
+    <th>Read</th>
+    <th>Date</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @messengers.each do |messenger| %>
+  <tr>
+    <td><%= messenger.user_from %></td>
+    <td><%= messenger.user_to %></td>
+    <td><%= messenger.title %></td>
+    <td><%= messenger.body %></td>
+    <td><%= messenger.read %></td>
+    <td><%= messenger.date %></td>
+    <td><%= link_to 'Show', messenger %></td>
+    <td><%= link_to 'Edit', edit_messenger_path(messenger) %></td>
+    <td><%= link_to 'Destroy', messenger, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Messenger', new_messenger_path %>
