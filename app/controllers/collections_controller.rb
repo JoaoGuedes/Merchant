@@ -43,6 +43,35 @@ class CollectionsController < ApplicationController
     end
   end
   
+  def showbyuser
+    user = User.where("name=?", params[:name]).first
+    @collections = Collection.where("user_id=?", user.id)
+    @title = params[:name]
+    respond_to do |format|
+      format.html # showbyuser.html.erb
+      format.json {
+        render :json => @collections.to_json(
+          :include => {
+              :user => {
+                :only => :name
+              },
+              :items => {
+                :include => {
+                    :photo => {
+                      :only => :url_thumb
+                    }
+                  },
+                :only => :title
+              }
+          },
+
+          :only => [:title, :description, :created_at, :visibility, :id]
+
+          )
+      }
+    end
+  end
+
   def show
     @collection = Collection.find(params[:id])
 
