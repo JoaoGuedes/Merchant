@@ -3,7 +3,8 @@
 /*
  *= require_self
  *= require fancybox
- *= require_tree .
+ *= require jquery.qtip
+ *= require jquery.qtip.min
  */
 
 body {
