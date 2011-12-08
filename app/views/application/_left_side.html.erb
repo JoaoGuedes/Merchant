@@ -2,9 +2,7 @@
 <p class="alert"><%= alert %></p>
 
 <% if user_signed_in? %>
-  <% if current_user.photo != nil %>
-    <img src="<%= current_user.photo.url_thumb %>">
-  <% end %>
+    <%= image_tag current_user.photo.url(:thumb) %>
   <br>
   <%= link_to current_user.name, edit_user_registration_path %><br />
   <%= link_to "Sign out", destroy_user_session_path, :method => :delete %><br><br>

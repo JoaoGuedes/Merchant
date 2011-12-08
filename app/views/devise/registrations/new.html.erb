@@ -1,6 +1,6 @@
 <h2>Sign up</h2>
 
-<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+<%= form_for(resource, :as => resource_name, :html => { :multipart => true }, :url => registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
   <div><%= f.label :name %><br />
@@ -20,6 +20,11 @@
 
   <div><%= f.label :password_confirmation %><br />
   <%= f.password_field :password_confirmation %></div>
+
+  <div class="field">
+	<%= f.label :picture %> <br />
+    <%= f.file_field :photo %>
+  </div>
 
   <div><%= f.submit "Sign up" %></div>
 <% end %>

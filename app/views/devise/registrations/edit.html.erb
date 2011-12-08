@@ -1,7 +1,12 @@
 <h2>Edit <%= resource_name.to_s.humanize %></h2>
 
-<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
+<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put, :multipart => true }) do |f| %>
   <%= devise_error_messages! %>
+
+<p>
+  <%= f.label :picture %><br />
+  <%= image_tag @user.photo.url(:thumb) %>
+</p>
 
   <div><%= f.label :name %><br />
   <%= f.text_field :name %></div>
@@ -14,6 +19,9 @@
 
   <div><%= f.label :email %><br />
   <%= f.email_field :email %></div>
+
+  <br />
+  <%= f.file_field :photo %>
 
 <!--
   <div><%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
