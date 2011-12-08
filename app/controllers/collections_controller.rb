@@ -44,8 +44,8 @@ class CollectionsController < ApplicationController
   end
   
   def showbyuser
-    user = User.where("name=?", params[:name]).first
-    @collections = Collection.where("user_id=?", user.id)
+    #name = User.where("user_id=?", params[:id]).name
+    @collections = Collection.where("user_id=?", params[:id])
     @title = params[:name]
     respond_to do |format|
       format.html # showbyuser.html.erb
