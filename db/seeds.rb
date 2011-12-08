@@ -25,8 +25,7 @@ Photo.create([
             ])
             
 User.create([
-            { :name => 'Joao Pedro', :city => 'Porto', :email => 'joaopedro@gmail.com', :password => 'abcd', :photo_id => '1' },
-            { :name => 'Merchant', :city => 'Porto', :about => 'FEUP', :email => 'merchant@gmail.com', :password => 'merchant', :photo_id => '2' }
+            { :name => 'Merchant', :city => 'Porto', :about => 'FEUP', :email => 'merchant@gmail.com', :password => 'merchant' }
             ])
 
 Category.create([
