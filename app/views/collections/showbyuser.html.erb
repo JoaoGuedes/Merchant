@@ -1,4 +1,7 @@
 <h1><%= @title %></h1>
+	<% if user_signed_in? && current_user.id == @id.to_i %>
+            <%= link_to image_tag("addcollection.png"), new_collection_path %>		
+	<% end %>
 
 	<% @collections.each do |collection| %>
         <div class="collData">

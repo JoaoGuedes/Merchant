@@ -10,7 +10,7 @@
       </ul>
     </div>
   <% end %>
-
+<%= f.hidden_field :user_id, :value => current_user.id %>
   <div class="field">
     <%= f.label :title %><br />
     <%= f.text_field :title %>
@@ -23,14 +23,10 @@
     <%= f.label :visibility %><br />
     <%= f.check_box :visibility %>
   </div>
-  <div class="field">
-    <%= f.label :user_id %><br />
-    <%= f.number_field :user_id %>
-  </div>
-  <div class="field">
-    <%= f.label :category_id %><br />
-    <%= f.number_field :category_id %>
-  </div>
+
+	<%= f.label :category %>
+<%= collection_select(:collection, :category_id, Category.all, :id, :name) %>
+
   <div class="actions">
     <%= f.submit %>
   </div>
