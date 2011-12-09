@@ -7,6 +7,7 @@
   <%= link_to current_user.name, edit_user_registration_path %><br />
   <%= link_to "Sign out", destroy_user_session_path, :method => :delete %><br><br>
   <%= link_to "My Collections", collections_path + "/byUser/" + current_user.id.to_s %><br /><br />
+  <%= link_to "My Collections by Mail", collections_path + "/byUserMail/" + current_user.email %><br /><br />
 <% else %>
   <%= link_to "Sign up", new_user_registration_path %> or <%= link_to "sign in", new_user_session_path %><br><br>
   <%= link_to image_tag("signin_facebook.png"), user_omniauth_authorize_path(:facebook) %>

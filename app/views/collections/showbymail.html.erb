@@ -1,0 +1,25 @@
+<h1><%= @title %></h1>
+
+	<% @collections.each do |collection| %>
+        <div class="collData">
+        <h1><%= link_to collection.title, collection %></h1>
+
+        <%= collection.description %><br />
+        <% if collection.visibility %>
+            <%= image_tag "private.png", :alt => "Private collection" %>
+        <% else %>
+            <%= image_tag "public.png", :alt => "Public collection" %>
+        <% end %>
+        <!--<%= collection.created_at %>--><br />
+        </div>
+        <div class="collPhotos">
+        <% collection.items[0,4].each do |item| %>
+            <a rel="photo_group" href="<%= item.photo.url %>" title="<h1><%= item.title %></h1><br/><%= item.description %>">
+            <%= image_tag item.photo.url_thumb, :class => 'itemPhotos' %>
+            </a>
+        <% end %>
+	</div>
+
+	<% end %>
+
+<br />

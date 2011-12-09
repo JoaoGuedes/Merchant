@@ -19,6 +19,8 @@ Site::Application.routes.draw do
 
   resources :categories
 
+  #match 'collections/byUserMail/:email' => 'collections#showbymail', :email => /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/
+  match 'collections/byUserMail/:email' => 'collections#showbymail', :constraints => { :email => /[^\/]*/ }
   match 'collections/byUser/:id' => 'collections#showbyuser'
   match 'collections/byCategory/:name' => 'collections#showbyname'
   resources :collections
