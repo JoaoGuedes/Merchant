@@ -8,9 +8,9 @@
  */
 
 body {
-background:#8b8b8b;
+background:#181818;
 color:#303030;
-font:76% LVerdana,Tahoma,Arial,sans-serif; 
+font: bold 14px "helvetica neue", helvetica, arial, sans-serif;
 margin:0;
 padding:0;
 text-align:center;
@@ -24,12 +24,54 @@ text-decoration:none;
 
 a:hover {
 color:#808080;
-text-decoration:underline;
+text-decoration:none;
 }
 
 p {
 line-height:1.5em;
 margin:0 0 15px;
+}
+
+/*** Buttons ***/
+
+button.clean-gray {
+  background-color: #eeeeee;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#eeeeee), to(#cccccc));
+  /* Saf4+, Chrome */
+  background-image: -webkit-linear-gradient(top, #eeeeee, #cccccc);
+  background-image: -moz-linear-gradient(top, #eeeeee, #cccccc);
+  background-image: -ms-linear-gradient(top, #eeeeee, #cccccc);
+  background-image: -o-linear-gradient(top, #eeeeee, #cccccc);
+  background-image: linear-gradient(top, #eeeeee, #cccccc);
+  border: 1px solid #ccc;
+  border-bottom: 1px solid #bbb;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+  color: #333;
+font: bold 12px "helvetica neue", helvetica, arial, sans-serif;
+  line-height: 1;
+  padding: 8px 0;
+  text-align: center;
+  text-shadow: 0 1px 0 #eee;
+  width: 150px; }
+
+  button.clean-gray:hover {
+	background-color: #333;	
+	color: #fff;
+	  background-image: -webkit-gradient(linear, left top, left bottom, from(##333333), to(#383838));
+	  /* Saf4+, Chrome */
+	  background-image: -webkit-linear-gradient(top, #333333, #383838);
+	  background-image: -moz-linear-gradient(top, #333333, #383838);
+	  background-image: -ms-linear-gradient(top, #333333, #383838);
+	  background-image: -o-linear-gradient(top, #333333, #383838);
+	  background-image: linear-gradient(top, #333333, #383838);
+    border: 1px solid #bbb;
+    border-bottom: 1px solid #999;
+  	text-shadow: 0 1px 0 #000000;
+    cursor: pointer;
 }
 
 /*** Items ***/
@@ -41,23 +83,36 @@ margin:0 0 15px;
 
 /*** Collections ***/
 
-.usrData {
+.collectionWrapper {
+	margin: 0 auto;
+	width: 100%;
+	display: table;
+	margin-top: 20px;
+
+}
+
+.userInfo {
 	float:left;
-	margin:5px 15px 6px;
+	height: 100%;
+	width: 15%;
 	text-align: center;
-	padding:5px;
+	padding: 10px;
+
 }
 
-.collData {
-	margin:5px 15px 6px;
-	padding: 5px;	
-}
-.collData img {
+.collectionData {
+	float:left;
+	width: 70%;
+	height:100%;
+	padding: 10px;
 	margin-top: 10px;
+	
+}
+.collectionData img {
+	margin-top: 15px;
 }
 
-.collPhotos {
-	margin:5px 84px 6px;
+.collectionDataPhotos {
 	padding: 5px;
 }
 /*** Main container ***/
@@ -78,7 +133,7 @@ width:100%;
 color:#ffffff;
 height:92px;
 margin:0 20px 10px;
-text-align:left;
+text-align:center;
 }
 
 #sitename h1,#sitename h2 {
@@ -150,7 +205,7 @@ padding:0;
 
 #leftside,#rightside {
 margin:0;
-padding:0 10px 10px;
+padding:0 15px 10px;
 width:165px;
 }
 
@@ -169,8 +224,7 @@ margin-left:10px;
 color:#505050;
 font-size:1.6em;
 font-weight:bold;
-
-margin:0 0 12px;
+margin:0px 0 12px;
 }
 
 #leftside h2,#rightside h2 {
@@ -182,6 +236,66 @@ margin:0 0 20px;
 font-size:1.0em;
 line-height:1.4em;
 margin:0 0px 10px 10px;
+}
+
+#categories ul {
+	list-style: none;
+	padding:0px;
+	width: 100%;	
+	border-radius: 10px; 
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-left: 1px solid #ccc;
+	border-top: 1px solid #ccc;
+	border-right: 1px solid #ccc;
+}
+
+#categories ul li {
+  	background-color: #eeeeee;
+  	background-image: -webkit-gradient(linear, left top, left bottom, from(#eeeeee), to(#e6e6e6));
+  	/* Saf4+, Chrome */
+  	background-image: -webkit-linear-gradient(top, #eeeeee, #e6e6e6);
+  	background-image: -moz-linear-gradient(top, #eeeeee, #e6e6e6);
+  	background-image: -ms-linear-gradient(top, #eeeeee, #e6e6e6);
+  	background-image: -o-linear-gradient(top, #eeeeee, #e6e6e6);
+  	background-image: linear-gradient(top, #eeeeee, #e6e6e6);
+  	border-bottom: 1px solid #ccc;
+	border-bottom-left-radius: 0px;
+  	color: #333;
+	font: bold 12px "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
+	text-align: left;
+	text-indent: 4px;
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+#categories ul li:first-child, #categories ul li:first-child a {
+	border-top-left-radius: 10px;	
+	border-top-right-radius: 10px;	
+}
+#categories ul li:last-child, #categories ul li:last-child a {
+	border-bottom-left-radius: 10px;	
+	border-bottom-right-radius: 10px;	
+}
+
+#categories ul li a:hover {
+	background-color: #333;	
+  	background-image: -webkit-gradient(linear, left top, left bottom, from(##333333), to(#383838));
+  	/* Saf4+, Chrome */
+  	background-image: -webkit-linear-gradient(top, #333333, #383838);
+  	background-image: -moz-linear-gradient(top, #333333, #383838);
+  	background-image: -ms-linear-gradient(top, #333333, #383838);
+  	background-image: -o-linear-gradient(top, #333333, #383838);
+  	background-image: linear-gradient(top, #333333, #383838);
+	color: #fff;	
+}
+
+#categories ul li a {
+	display: block;
+	padding: 12px;
+	color: #333;
+	text-decoration: none;
 }
 
 .linklist {
@@ -223,13 +337,13 @@ width:125px;
 /*** Content ***/
 
 #content,#contentalt {
-background-color:#fafcff;
+background-color:#e8e8e8;
 border:1px solid #909090;
 color:#2a2a2a;
 padding:15px 20px 5px;
 }
 
-#content {margin:0 200px;}
+#content {margin:70px 200px;}
 #contentalt {margin:0 200px 0 20px;}
 
 #content h1,#content h2,#contentalt h1,#contentalt h2 {
@@ -237,7 +351,7 @@ background-color:inherit;
 color:#606060;
 font-size:1.8em;
 font-weight:bold;
-margin:0 0 15px;
+margin:0 0 0px;
 padding:0;
 }
 
@@ -249,7 +363,7 @@ margin-bottom:10px;
 /*** Footer ***/
 
 #footer {
-background:#8b8b8b url(footerbg.jpg) top left repeat-x;
+background:#181818;
 clear:both;
 color:#d0d0d0;
 font-size:0.9em;
@@ -261,7 +375,7 @@ width:100%;
 }
 
 #footer a {
-color:#d0d0d0;
+color:#181818;
 font-weight:bold;
 }
 

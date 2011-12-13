@@ -39,17 +39,9 @@ $(document).ready(function() {
 <div id="container">
 
 <div id="sitename">
-<h1>Merchant</h1>
-<h2>share your collectibles</h2>
+<h1>merchant</h1>
 </div>
 
-<div id="mainmenu">
-<ul>
-<li><a class="current" href="#">Home</a></li>
-<li><a href="#">Sitemap</a></li>
-<li><a href="#">About</a></li>
-</ul>
-</div>
  
 <div id="wrap">
 
@@ -61,14 +53,13 @@ $(document).ready(function() {
 </div>	
 
 <div id="rightside">
-<h1>Search</h1>
-<p class="searchform">
-<input type="text" alt="Search" class="searchbox" />
-<input type="submit" value="Go!" class="searchbutton" />
-</p>
 
 <h1>Categories</h1>
-<p><%= render "right_side" %></p>
+<div id="categories">
+<ul>
+<%= render "right_side" %>
+</ul>
+</div>
 </div>
 
 <div id="content">
