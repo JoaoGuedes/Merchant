@@ -32,6 +32,31 @@ line-height:1.5em;
 margin:0 0 15px;
 }
 
+input, select, textarea	{
+		margin:20px 20px 0 0; 
+		padding:3px 5px; 
+		font-family:Arial, Helvetica, sans-serif; 
+		font-size:17px; 
+		font-weight:bold; 
+		border:#cbcbcb solid 1px; 
+		background:#ffffff
+}
+
+input[type="text"] {
+		color:#bfbfbf; 	
+		height:30px; 
+		width:300px; 
+}
+
+select {
+		color:#000000; 	
+}
+textarea	{
+		width:300px; 
+		height:100px; 
+		color:#bfbfbf; 
+}
+
 /*** Buttons ***/
 
 button.clean-gray {

@@ -12,22 +12,18 @@
   <% end %>
 <%= f.hidden_field :user_id, :value => current_user.id %>
   <div class="field">
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
+    <%= f.text_field :title, :placeholder => "Title" %>
   </div>
   <div class="field">
-    <%= f.label :description %><br />
-    <%= f.text_field :description %>
+    <%= f.text_area :description, :placeholder => "Description" %>
   </div>
-  <div class="field">
-    <%= f.label :visibility %><br />
-    <%= f.check_box :visibility %>
-  </div>
+<%= collection_select(:collection, :category_id, Category.all, :id, :name) %><br/>
+<div class="field">
+  <%= f.label "Private" %>
+  <%= f.check_box :visibility %>
+</div>
 
-	<%= f.label :category %>
-<%= collection_select(:collection, :category_id, Category.all, :id, :name) %>
-
-  <div class="actions">
+  <div class="actions"><br/>
     <%= f.submit %>
   </div>
 <% end %>
