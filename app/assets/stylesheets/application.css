@@ -108,7 +108,7 @@ div.collectionWrapper {
 	margin: 0 auto;
 	width: 100%;
 	display: table;
-	margin-top: 20px;
+	margin: 20px;
 }
 
 #userInfo {
@@ -384,6 +384,7 @@ width:125px;
 /*** Content ***/
 
 .content,.contentalt {
+border-radius: 10px;
 width: 60%;
 float: left;
 background-color:#e8e8e8;
