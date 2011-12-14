@@ -2,29 +2,29 @@
 
 <% @collections.each do |collection| %>
 <div class="collectionWrapper">
-	<div class="userInfo">
-	    <%= image_tag collection.user.photo.url(:thumb) %><br />
-			<%= collection.user.name %><br />
+	<div id="userInfo">
+	    <%= image_tag collection.user.photo.url(:thumb) %>
+			<h1><%= collection.user.name %></h1>
 	</div>
 
-	<div class="collectionData">
+	<div id="collectionData">
 		<h1><%= link_to collection.title, collection %></h1>
-		<%= collection.description %><br />
+		<div id="collectionDescription"><%= collection.description %></div>
 
 		<% if collection.visibility %>
-			<%= image_tag "private.png", :alt => "Private collection" %>
+			<%= image_tag "private.png", :alt => "Private collection", :id => "collectionVis" %>
 			<% else %>
-			<%= image_tag "public.png", :alt => "Public collection" %>
+			<%= image_tag "public.png", :alt => "Public collection", :id => "collectionVis" %>
 			<% end %>
 			<!--<%= collection.created_at %>--><br /> 
 	
-			<div class="collectionDataPhotos">
+			<div id="collectionDataPhotos">
 				<% collection.items[0,4].each do |item| %>
-				<a rel="photo_group" href="<%= item.photo.url %>" title="<h1><%= item.title %></h1><br/><%= item.description %>">
-				<%= image_tag item.photo.url_thumb, :class => 'itemPhotos' %>
-				</a>
-				<% end %>
-		<%= link_to "...", collection %>
+					<a rel="photo_group" href="<%= item.photo.url %>" title="<h1><%= item.title %></h1><br/><%= item.description %>">
+					<%= image_tag item.photo.url_thumb, :class => 'itemPhotos' %>
+					</a>
+				<% end %>					
+				<%= link_to "...", collection %>
 			</div>
 	</div>
 </div>

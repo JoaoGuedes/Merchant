@@ -38,36 +38,35 @@ $(document).ready(function() {
 
 <div id="container">
 
-<div id="sitename">
-<h1>merchant</h1>
+	<div id="sitename">
+		<h1>merchant</h1>
+	</div>
+
+	<div id="subcontainer">
+		<div id="wrap">
+
+			<div id="leftside">
+				<h1>My account</h1>
+				<p>	<%= render "left_side" %></p>
+			</div>	
+
+		<div class="content">
+			<%= yield %>
+		</div>
+
+		<div id="rightside">
+			<h1>Categories</h1>
+			<div id="categories">
+				<ul>
+					<%= render "right_side" %>
+				</ul>
+			</div>
+		</div>
+	</div>
+	
+	<div class="clearingdiv">&nbsp;</div>
 </div>
 
- 
-<div id="wrap">
-
-	<div id="leftside">
-	<h1>My account</h1>
-	<p>		
-	   <%= render "left_side" %>
-	</p>
-</div>	
-
-<div id="rightside">
-
-<h1>Categories</h1>
-<div id="categories">
-<ul>
-<%= render "right_side" %>
-</ul>
-</div>
-</div>
-
-<div id="content">
-<%= yield %>
-</div>
-<div class="clearingdiv">&nbsp;</div>
-</div>
-</div>
 <div id="footer">&copy; 2011 Merchant | All Rights Reserved</div>
 </body>
 </html>

@@ -6,7 +6,7 @@
   <br>
   <%= link_to current_user.name, edit_user_registration_path %><br />
   <%= link_to "Sign out", destroy_user_session_path, :method => :delete %><br><br>
-<button class="clean-gray" onClick="window.location.href='<%= collections_path + "/byUser/" + current_user.id.to_s %>'">My Collections</button>
+<button class="clean-gray" onClick="window.location.href='<%= collections_path + "/byUser/" + current_user.id.to_s %>'">My Collections</button><br/>
 <button class="clean-gray" onClick="window.location.href='<%= collections_path + "/byUserMail/" + current_user.email %>'">My Collections Mail</button>
 <% else %>
   <%= link_to "Sign up", new_user_registration_path %> or <%= link_to "sign in", new_user_session_path %><br><br>
