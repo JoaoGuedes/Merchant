@@ -6,13 +6,13 @@
 
   <%= image_tag @user.photo.url(:thumb) %>
 
-  <div><%= f.text_field :name %></div>
+  <div><%= f.text_field :name, :placeholder => "Name" %></div>
 
-  <div><%= f.text_field :city %></div>
+  <div><%= f.text_field :city, :placeholder => "City" %></div>
 
-  <div><%= f.text_area :about %></div>
+  <div><%= f.text_area :about, :placeholder => "About me..." %></div>
 
-  <div><%= f.email_field :email %></div>
+  <div><%= f.email_field :email, :placeholder => "Email" %></div>
 
   <div><%= f.file_field :photo %></div>
 
