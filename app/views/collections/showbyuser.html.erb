@@ -1,4 +1,4 @@
-<h1><%= @title %></h1>
+<h1 style="text-align:center"><%= @title %></h1>
 	<% if user_signed_in? && current_user.id == @id.to_i %>
 	<button class="clean-gray" onClick="window.location.href='<%= new_collection_path %>'">Add collection</button>	
 	<% end %>
