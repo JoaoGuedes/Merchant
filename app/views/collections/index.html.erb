@@ -21,8 +21,8 @@
 			<!--<%= collection.created_at %>--><br /> 
 	
 			<div id="collectionDataPhotos">
-				<% collection.items[0,4].each do |item| %>
-					<a rel="photo_group" href="<%= item.photo.url %>" title="<h1><%= item.title %></h1><br/><%= item.description %>">
+				<% collection.items[0,6].each do |item| %>
+					<a class="group" rel="photo_group[<%= collection.id %>]" href="<%= item.photo.url %>" title="<h1><%= item.title %></h1><br/><%= item.description %>">
 					<%= image_tag item.photo.url_thumb, :class => 'itemPhotos' %>
 					</a>
 				<% end %>					
