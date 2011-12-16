@@ -20,6 +20,7 @@ $(document).ready(function() {
 					}
 				});
 				
+				
 	$("a.group").fancybox({
 					'transitionIn'		: 'none',
 					'transitionOut'		: 'none',
@@ -28,7 +29,7 @@ $(document).ready(function() {
 						return '<span id="fancybox-title-over">' + title + '</span>';
 					}
 				});
-	$("#new_collection").formToWizard();
+				
+    $("#newCollection").formToWizard({ submitButton: 'commit' })
 				
 });
-

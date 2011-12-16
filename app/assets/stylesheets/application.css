@@ -53,6 +53,13 @@ textarea	{
 		height:100px; 
 }
 
+#steps { list-style:none; width:100%; overflow:hidden; margin:0px; padding:0px;}
+#steps li {font-size:24px; float:left; padding:10px; color:#b0b1b3;}
+#steps li span {font-size:11px; display:block;}
+#steps li.current { color:#000;}
+fieldset { border:none; width:320px;}
+legend { font-size:18px; margin:0px; padding:10px 0px; color:#31a1ff; font-weight:bold;}
+
 /*** Buttons ***/
 
 button.clean-gray {
