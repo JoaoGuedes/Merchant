@@ -8,30 +8,6 @@
 <%= javascript_include_tag "application" %>
 <%= csrf_meta_tags %>
 
-<script type="text/javascript">
-$(document).ready(function() {
-	$('a[title]').qtip({
-					position: {
-						my: 'top-left',
-						at: 'center'
-					},
-					style: {
-						classes: 'ui-tooltip-shadow ui-tooltip-light'
-					}
-				});
-				
-	$("a.group").fancybox({
-					'transitionIn'		: 'none',
-					'transitionOut'		: 'none',
-					'titlePosition' 	: 'outside',
-					'titleFormat'		: function(title, currentArray, currentIndex, currentOpts) {
-						return '<span id="fancybox-title-over">' + title + '</span>';
-					}
-				});
-
-});
-</script>
-
 </head>
 
 <body>

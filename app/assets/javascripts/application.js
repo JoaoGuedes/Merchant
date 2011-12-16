@@ -8,3 +8,27 @@
 //= require jquery_ujs
 //= require_tree .
 //= require fancybox
+
+$(document).ready(function() {
+	$('a[title]').qtip({
+					position: {
+						my: 'top-left',
+						at: 'center'
+					},
+					style: {
+						classes: 'ui-tooltip-shadow ui-tooltip-light'
+					}
+				});
+				
+	$("a.group").fancybox({
+					'transitionIn'		: 'none',
+					'transitionOut'		: 'none',
+					'titlePosition' 	: 'outside',
+					'titleFormat'		: function(title, currentArray, currentIndex, currentOpts) {
+						return '<span id="fancybox-title-over">' + title + '</span>';
+					}
+				});
+	$("#new_collection").formToWizard();
+				
+});
+

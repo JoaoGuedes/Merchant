@@ -11,21 +11,24 @@
     </div>
   <% end %>
 <%= f.hidden_field :user_id, :value => current_user.id %>
-  <div class="field">
-    <%= f.text_field :title, :placeholder => "Title" %>
-  </div>
-  <div class="field">
-    <%= f.text_area :description, :placeholder => "Description" %>
-  </div>
-<%= collection_select(:collection, :category_id, Category.all, :id, :name) %><br/>
-<div class="field">
-  <%= f.label "Private" %>
-  <%= f.check_box :visibility %>
-</div>
-
-<%= f.fields_for :items do |builder| %>
-  <%= render "item_fields", :f => builder %>
-<% end %>
+<fieldset>
+	  <div class="field">
+	    <%= f.text_field :title, :placeholder => "Title" %>
+	  </div>
+	  <div class="field">
+	    <%= f.text_area :description, :placeholder => "Description" %>
+	  </div>
+	<%= collection_select(:collection, :category_id, Category.all, :id, :name) %><br/>
+	<div class="field">
+	  <%= f.label "Private" %>
+	  <%= f.check_box :visibility %>
+	</div>
+</fieldset>
+<fieldset>
+	<%= f.fields_for :items do |builder| %>
+	  <%= render "item_fields", :f => builder %>
+	<% end %>
+</fieldset>
 
   <div class="actions"><br/>
     <%= f.submit %>
