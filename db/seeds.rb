@@ -67,3 +67,5 @@ Item.create([
           { :title => 'Kijii', :description => '#01/540', :tradeable => false, :sellable => false, :collection_id => '2', :photo_id => '3' },
           { :title => 'White Weenie Quest', :description => '#54/190', :tradeable => false, :sellable => false, :collection_id => '2', :photo_id => '4' }
   ])
+
+AdminUser.create(:email => 'admin@merchant.com', :password => 'merchant', :password_confirmation => 'merchant')
