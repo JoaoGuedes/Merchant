@@ -23,6 +23,10 @@
   <%= f.check_box :visibility %>
 </div>
 
+<%= f.fields_for :items do |builder| %>
+  <%= render "item_fields", :f => builder %>
+<% end %>
+
   <div class="actions"><br/>
     <%= f.submit %>
   </div>

@@ -114,6 +114,8 @@ class CollectionsController < ApplicationController
   # GET /collections/new.json
   def new
     @collection = Collection.new
+    
+    @collection.items.build
 
     respond_to do |format|
       format.html # new.html.erb
@@ -129,6 +131,7 @@ class CollectionsController < ApplicationController
   # POST /collections
   # POST /collections.json
   def create
+    
     @collection = Collection.new(params[:collection])
 
     respond_to do |format|

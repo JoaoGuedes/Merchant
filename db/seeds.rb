@@ -50,7 +50,7 @@ Category.create([
 
 Collection.create([
           { :title => 'Rock', :description => 'My albums', :visibility => false, :user_id => '1', :category_id => '13' },
-          { :title => 'Cartas Magic', :description => 'Colecao 2010', :visibility => false, :user_id => '2', :category_id => '3' }  
+          { :title => 'Cartas Magic', :description => 'Colecao 2010', :visibility => false, :user_id => '1', :category_id => '3' }  
   ])
   
 Item.create([

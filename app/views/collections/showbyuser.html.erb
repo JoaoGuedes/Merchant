@@ -9,22 +9,22 @@
 		    <%= image_tag collection.user.photo.url(:thumb) %>
 				<h1><%= collection.user.name %></h1>
 		</div>
-	
+
 		<div id="collectionData">
 			<h1><%= link_to collection.title, collection %></h1>
 			<div id="collectionDescription"><%= collection.description %></div>
-	
+
 			<% if collection.visibility %>
 				<%= image_tag "private.png", :alt => "Private collection", :id => "collectionVis" %>
 				<% else %>
 				<%= image_tag "public.png", :alt => "Public collection", :id => "collectionVis" %>
 				<% end %>
 				<!--<%= collection.created_at %>--><br /> 
-		
+
 				<div id="collectionDataPhotos">
-					<% collection.items[0,4].each do |item| %>
-						<a rel="photo_group" href="<%= item.photo.url %>" title="<h1><%= item.title %></h1><br/><%= item.description %>">
-						<%= image_tag item.photo.url_thumb, :class => 'itemPhotos' %>
+					<% collection.items[0,6].each do |item| %>
+						<a class="group" rel="photo_group[<%= collection.id %>]" href="<%= item.photo.url(:original) %>" title="<h1><%= item.title %></h1><br/><%= item.description %>">
+						<%= image_tag item.photo.url(:thumb), :class => 'itemPhotos' %>
 						</a>
 					<% end %>					
 					<%= link_to "...", collection %>
@@ -33,5 +33,3 @@
 	</div>
 	<br/>
 	<% end %>
-
-<br />

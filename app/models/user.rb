@@ -26,6 +26,7 @@ class User < ActiveRecord::Base
   has_many :collections, :dependent => :delete_all
   #has_many :messengers, :dependent => :delete_all
   #has_many :friends, :dependent => :delete_all
+  validates :name, :email, :presence => {:message => 'cannot be blank.'}
 
   def self.find_for_facebook_oauth(access_token, signed_in_resource=nil)
     data = access_token['extra']['raw_info']
