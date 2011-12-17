@@ -34,9 +34,9 @@ margin:0 0 15px;
 
 input, select, textarea	{
 		margin:20px 20px 0 0; 
-		padding:3px 5px; 
+		padding:8px 8px; 
 		font-family:Arial, Helvetica, sans-serif; 
-		font-size:17px; 
+		font-size:13px; 
 		font-weight:bold; 
 		border:#cbcbcb solid 1px; 
 		background:#ffffff;
@@ -59,6 +59,17 @@ textarea	{
 #steps li.current { color:#000;}
 fieldset { border:none; width:320px;}
 legend { font-size:18px; margin:0px; padding:10px 0px; color:#31a1ff; font-weight:bold;}
+.prev, .next { margin:20px 20px 0 0; 
+padding:8px 8px; 
+font-family:Arial, Helvetica, sans-serif; 
+font-size:13px; 
+font-weight:bold; 
+border:#cbcbcb solid 1px; 
+background:#ffffff;
+color:#000000;
+}
+ .prev { float:left;}
+ .next { float:right;}
 
 /*** Buttons ***/
 
@@ -161,11 +172,24 @@ div#collectionDescription {
 }
 
 img#collectionVis {
-	padding: 15px;
+	padding: 2px;
 }
 
 div#collectionDataPhotos {
 	padding: 10px;
+	margin: 0 auto;
+	width: 100%;
+	float: left;
+}
+
+div#collectionDataPhotos div#photo {
+	display: block;
+	width: 64px;
+	float: left;
+}
+
+div#collectionDataPhotos div#photo img#deleteItem {
+	margin-left: 16px;
 }
 /*** Main container ***/
 

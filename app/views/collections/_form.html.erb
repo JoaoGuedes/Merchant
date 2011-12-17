@@ -1,4 +1,4 @@
-<%= form_for(@collection, :html => { :id => "newCollection"}) do |f| %>
+<%= nested_form_for(@collection, :html => { :id => "newCollection"}) do |f| %>
   <% if @collection.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@collection.errors.count, "error") %> prohibited this collection from being saved:</h2>
@@ -27,12 +27,12 @@
 </fieldset>
 <fieldset>
 	<legend>Add items</legend>
-	<%= f.fields_for :items do |builder| %>
-	  <%= render "item_fields", :f => builder %>
-	<% end %>
+	<%= f.fields_for :items %>
+	<%= f.link_to_add "Add item", :items %>
+	
 </fieldset>
 
-  <div class="actions"><br/>
-    <%= f.submit "Create", :id => "commit" %>
+  <div class="actions">
+    <%= f.submit "Submit", :id => "commit" %>
   </div>
 <% end %>

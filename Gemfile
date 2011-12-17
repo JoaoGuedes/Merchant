@@ -13,7 +13,7 @@ gem 'json'
 gem 'devise'
 gem 'omniauth'
 gem "omniauth-facebook"
-
+gem 'nested_form', :git => 'https://github.com/fxposter/nested_form.git'
 gem 'paperclip'
 gem 'aws-s3'
 

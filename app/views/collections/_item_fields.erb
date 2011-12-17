@@ -2,7 +2,7 @@
   <%= f.text_field :title, :placeholder => "Title" %>
 </div>
 <div class="field">
-  <%= f.text_field :description, :placeholder => "Description" %>
+  <%= f.text_area :description, :placeholder => "Description" %>
 </div>
 <div class="field">
   <%= f.label :tradeable %>
@@ -15,3 +15,5 @@
 <div class="field">
   <%= f.file_field :photo, :placeholder => "Picture" %>
 </div>
+<%= f.link_to_remove "Remove" %>
+

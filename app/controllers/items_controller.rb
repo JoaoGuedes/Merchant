@@ -1,4 +1,6 @@
 class ItemsController < ApplicationController
+  before_filter :authenticate_user!, :only => [:new, :edit, :create, :update, :destroy]
+
   # GET /items
   # GET /items.json
   def index
@@ -14,7 +16,6 @@ class ItemsController < ApplicationController
   # GET /items/1.json
   def show
     @item = Item.find(params[:id])
-
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @item }
@@ -99,7 +100,7 @@ class ItemsController < ApplicationController
     @item.destroy
 
     respond_to do |format|
-      format.html { redirect_to items_url }
+      format.html { redirect_to :controller=>"collections", :action=>"showbyuser", :id => @item.collection.user }
       format.json { head :ok }
     end
   end

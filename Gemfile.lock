@@ -1,3 +1,9 @@
+GIT
+  remote: https://github.com/fxposter/nested_form.git
+  revision: 485d20acc2385583571d8dc4ab709a1a7d69d0b3
+  specs:
+    nested_form (0.1.1)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -187,6 +193,7 @@ DEPENDENCIES
   jquery-rails
   json
   meta_search (>= 1.1.0.pre)
+  nested_form!
   omniauth
   omniauth-facebook
   paperclip

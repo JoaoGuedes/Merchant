@@ -1,7 +1,7 @@
 class CollectionsController < ApplicationController
   # GET /collections
   # GET /collections.json
-  before_filter :authenticate_user!, :only => :new
+  before_filter :authenticate_user!, :only => [:new, :edit, :create, :update, :destroy]
   
   def index
     @collections = Collection.all
@@ -104,7 +104,6 @@ class CollectionsController < ApplicationController
 
   def show
     @collection = Collection.find(params[:id])
-
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @collection }
@@ -168,7 +167,7 @@ class CollectionsController < ApplicationController
     @collection.destroy
 
     respond_to do |format|
-      format.html { redirect_to collections_url }
+      format.html { redirect_to :controller=>"collections", :action=>"showbyuser", :id => @collection.user }
       format.json { head :ok }
     end
   end

@@ -1,7 +1,7 @@
 class Item < ActiveRecord::Base
   belongs_to :photo
   belongs_to :collection
-  attr_accessible :photo, :title
+  attr_accessible :photo, :title, :description, :tradeable, :sellable
   has_attached_file :photo, 
     :styles =>{
       :thumb  => "64x64",
