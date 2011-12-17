@@ -13,4 +13,12 @@ class Item < ActiveRecord::Base
       :secret_access_key => '62OyoMtFJiPx6EKKFhCkCVaFNqoIIjdnFpExtM4R'
     }
   validates :title, :presence => {:message => 'cannot be blank.'}
+  before_destroy :check_collection
+  
+  def check_collection
+    if self.collection.items.size == 1 || self.collection.items.all?{|item| item.marked_for_destruction? }
+      self.errors[:base] << "A collection must have at least one item."
+      false
+    end
+  end
 end

@@ -8,21 +8,34 @@
 	</div>
 
 	<div id="collectionData">
-		<h1><%= link_to collection.title, collection %></h1>
+		<div id="collectionTopBar">
+			<%= link_to collection.title, collection %>
+			<% if user_signed_in? && current_user.id == @id.to_i %>
+			<%= link_to image_tag("delete.png"), collection, confirm: 'Are you sure you want to delete collection?', method: :delete %>
+			<%= link_to image_tag("edit.png"), edit_collection_path(collection) %>
+			<% end %>
+		</div>
 		<div id="collectionDescription"><%= collection.description %></div>
-
+		
 		<% if collection.visibility %>
 			<%= image_tag "private.png", :alt => "Private collection", :id => "collectionVis" %>
 			<% else %>
 			<%= image_tag "public.png", :alt => "Public collection", :id => "collectionVis" %>
 			<% end %>
+			
+			
 			<!--<%= collection.created_at %>--><br /> 
-	
+
 			<div id="collectionDataPhotos">
 				<% collection.items[0,6].each do |item| %>
+					<div id="photo">
 					<a class="group" rel="photo_group[<%= collection.id %>]" href="<%= item.photo.url(:original) %>" title="<h1><%= item.title %></h1><br/><%= item.description %>">
-					<%= image_tag item.photo.url(:thumb), :class => 'itemPhotos' %>
+					<%= image_tag item.photo.url(:thumb) %><br/>
+					<% if user_signed_in? && current_user.id == @id.to_i %>
+					<%= link_to image_tag("delete.png", :id => "deleteItem"), item, confirm: 'Are you sure you want to delete item?', method: :delete %>
+					<% end %>
 					</a>
+					</div>
 				<% end %>					
 				<%= link_to "...", collection %>
 			</div>

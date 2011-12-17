@@ -11,7 +11,13 @@
 		</div>
 
 		<div id="collectionData">
-			<h1><%= link_to collection.title, collection %></h1>
+			<div id="collectionTopBar">
+				<%= link_to collection.title, collection %>
+				<% if user_signed_in? && current_user.id == @id.to_i %>
+				<%= link_to image_tag("delete.png"), collection, confirm: 'Are you sure you want to delete collection?', method: :delete %>
+				<%= link_to image_tag("edit.png"), edit_collection_path(collection) %>
+				<% end %>
+			</div>
 			<div id="collectionDescription"><%= collection.description %></div>
 			
 			<% if collection.visibility %>
@@ -20,10 +26,6 @@
 				<%= image_tag "public.png", :alt => "Public collection", :id => "collectionVis" %>
 				<% end %>
 				
-				<% if user_signed_in? && current_user.id == @id.to_i %>
-				<%= link_to image_tag("edit.png", :id => "collectionVis"), edit_collection_path %>
-				<%= link_to image_tag("delete.png", :id => "collectionVis"), collection, confirm: 'Are you sure you want to delete collection?', method: :delete %>
-				<% end %>
 				
 				<!--<%= collection.created_at %>--><br /> 
 
