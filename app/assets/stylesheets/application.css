@@ -73,7 +73,7 @@ color:#000000;
 
 /*** Buttons ***/
 
-button.clean-gray {
+button.clean-gray, a.clean-gray, input.clean-gray {
   background-color: #eeeeee;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#eeeeee), to(#cccccc));
   /* Saf4+, Chrome */
@@ -95,9 +95,10 @@ font: bold 12px "helvetica neue", helvetica, arial, sans-serif;
   padding: 8px 0;
   text-align: center;
   text-shadow: 0 1px 0 #eee;
-  width: 150px; }
+  width: 150px; 
+}
 
-  button.clean-gray:hover {
+button.clean-gray:hover, a.clean-gray:hover, input.clean-gray:hover {
 	background-color: #31a1ff;	
 	color: #fff;
 	  background-image: -webkit-gradient(linear, left top, left bottom, from(#457FB0), to(#457FB0));
@@ -111,6 +112,14 @@ font: bold 12px "helvetica neue", helvetica, arial, sans-serif;
     border-bottom: 1px solid #999;
   	text-shadow: 0 1px 0 #000000;
     cursor: pointer;
+}
+a.clean-gray {
+	margin-top: 5px;
+	width: 100px;
+  display: block;
+}
+input.clean-gray {
+	width: 100px;
 }
 
 /*** Items ***/

@@ -12,7 +12,7 @@
   <% end %>
 <%= f.hidden_field :user_id, :value => current_user.id %>
 <fieldset>
-	<legend>Add your collection details</legend>
+	<legend>Collection details</legend>
 	  <div class="field">
 	    <%= f.text_field :title, :placeholder => "Title" %>
 	  </div>
@@ -26,13 +26,14 @@
 	</div>
 </fieldset>
 <fieldset>
-	<legend>Add items</legend>
+	<legend>Items</legend>
 	<%= f.fields_for :items %>
-	<%= f.link_to_add "Add item", :items %>
-	
+	<%= f.link_to_add "Add item", :items, :class => "clean-gray" %>	
 </fieldset>
-
+<fieldset>
+	<legend>Save collection</legend>
   <div class="actions">
-    <%= f.submit "Submit", :id => "commit" %>
+    <%= f.submit "Submit", :id => "commit", :class => "clean-gray" %>
   </div>
+</fieldset>
 <% end %>
