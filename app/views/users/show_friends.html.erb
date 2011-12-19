@@ -1,0 +1,14 @@
+<h1 style="text-align:center">My Friends</h1>
+
+<div class="collectionWrapper">
+<% @friends.each do |friend| %>
+
+	<div id="userInfo">
+	    <%= image_tag friend.photo.url(:thumb) %>
+			<h1><%= friend.name %></h1>
+			<%= link_to "delete", :controller => "/users", :action => "destroy_friends", :friend_id => friend.id %>
+	</div>
+
+<% end %>
+
+</div>

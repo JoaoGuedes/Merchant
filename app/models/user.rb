@@ -27,6 +27,7 @@ class User < ActiveRecord::Base
   #has_many :messengers, :dependent => :delete_all
   #has_many :friends, :dependent => :delete_all
   validates :name, :email, :presence => {:message => 'cannot be blank.'}
+  acts_as_network :users, :through => :invites, :conditions => "is_accepted = 't'"
 
   def self.find_for_facebook_oauth(access_token, signed_in_resource=nil)
     data = access_token['extra']['raw_info']
@@ -48,4 +49,16 @@ class User < ActiveRecord::Base
     params.delete(:current_password)
     self.update_without_password(params)
   end
+  
+  def get_new_invites_count
+    invites_in.find(:all).select{|i|i.user_id_target = self}.select{|i|i.is_accepted!=true}.count
+  end
+  
+  def has_not_reached(user)
+    if (self != user && users.include?(user) == false && invites_out.where("user_id_target=?", user.id).count == 0)
+      true
+    else
+      false
+    end
+	end
 end

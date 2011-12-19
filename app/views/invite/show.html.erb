@@ -1,0 +1,20 @@
+<h1 style="text-align:center">Friend Requests</h1>
+
+<% @invites.each do |invite| %>
+<div class="collectionWrapper">
+	<div id="userInfo">
+	    <%= image_tag invite.user.photo.url(:thumb) %>
+			<h1><%= invite.user.name %></h1>
+	</div>
+
+	<div id="collectionData">
+		<%= invite.message %>
+		<a href="<%= url_for :controller => :invite, :action => :accept, :invite => invite.id %>" class="clean-gray">Accept</a>
+				<a href="<%= url_for :controller => :invite, :action => :deny, :invite => invite.id %>" class="clean-gray">Deny</a>
+		<div id="collectionDescription"></div>
+		
+	</div>
+</div>
+<br/>
+<% end %>
+

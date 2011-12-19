@@ -10,6 +10,9 @@ Site::Application.routes.draw do
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   get '/users/auth/:provider' => 'users/omniauth_callbacks#passthru'
   
+  get '/users/show_friends' => 'users#show_friends'
+  match '/users/destroy_friends' => 'users#destroy_friends'
+  
   match 'items/byCollection/:id' => 'items#showbyid'
   resources :items
 
@@ -23,6 +26,11 @@ Site::Application.routes.draw do
   match 'collections/byUserMail/:email' => 'collections#showbymail', :constraints => { :email => /[^\/]*/ }
   match 'collections/byUser/:id' => 'collections#showbyuser'
   match 'collections/byCategory/:name' => 'collections#showbyname'
+  
+  get '/invite/create' => 'invite#create'
+  get '/invite/show' => 'invite#show'
+  get '/invite/accept' => 'invite#accept'
+  get '/invite/deny' => 'invite#deny'
   resources :collections
 
   #get "home/index"

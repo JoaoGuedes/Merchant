@@ -1,5 +1,23 @@
 class UsersController < ApplicationController
-
+  before_filter :authenticate_user!, :only => [:show_friends, :destroy_friends]
+  
+  def show_friends
+      user = User.find(params[:id])
+      @friends = user.users_in
+      
+      respond_to do |format|
+        format.html # show.html.erb
+        format.json { render json: @invites }
+      end
+    end
+    
+    def destroy_friends
+        friend_record = Invite.where("user_id=? AND user_id_target=? OR user_id_target= ? AND user_id = ?", params[:friend_id], current_user.id, current_user.id, params[:friend_id])
+        friend_record.delete
+        respond_to do |format|
+            format.html { redirect_to :back, notice: 'Friend deleted.' }
+          end
+      end    
   # POST /users
   # POST /users.json
   def create
