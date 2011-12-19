@@ -22,7 +22,7 @@
 	<% end %>
 	</div>
 <% else %>
-	<% if user_signed_in? && @collection.user.users.include?(current_user) %>
+	<% if user_signed_in? && (@collection.user.users.include?(current_user) || @collection.user == current_user) %>
 	<div id="collectionDataPhotos">
 	<% @collection.items.each do |item| %> 
 		<div id="photo">
