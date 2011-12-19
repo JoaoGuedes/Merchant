@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   
   def show_friends
       user = User.find(params[:id])
-      @friends = user.users_in
+      @friends = user.users
       
       respond_to do |format|
         format.html # show.html.erb

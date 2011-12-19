@@ -55,7 +55,7 @@ class User < ActiveRecord::Base
   end
   
   def has_not_reached(user)
-    if (self != user && users.include?(user) == false && invites_out.where("user_id_target=?", user.id).count == 0)
+    if (invites_in.where("user_id=?", user.id).count == 0 && self != user && users.include?(user) == false && invites_out.where("user_id_target=?", user.id).count == 0)
       true
     else
       false

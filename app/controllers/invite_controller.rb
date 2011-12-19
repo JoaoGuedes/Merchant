@@ -1,6 +1,6 @@
 class InviteController < ApplicationController
   def create
-    @invite = Invite.new(:user_id => current_user, :user_id_target => params[:dest_id])
+    @invite = Invite.new(:user_id => current_user.id, :user_id_target => params[:dest_id])
 
     respond_to do |format|
       if @invite.save

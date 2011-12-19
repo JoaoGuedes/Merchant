@@ -8,36 +8,36 @@
   <h3>  <%= @collection.description %> </h3>
 </p>
 
-<!--
-<% if @collection.visibility %>
-<%= image_tag "private.png", :alt => "Private collection" %>
-<% else %>
-<%= image_tag "public.png", :alt => "Public collection" %>
-<% end %>
-
- <p>
-  <b>User:</b>
-  <%= @collection.user.name %>
-</p>
-
-<p>
-  <b>Category:</b>
-  <%= @collection.category.name %>
-</p> -->
-<br />
-<div id="collectionDataPhotos">
-<% @collection.items.each do |item| %> 
-	<div id="photo">
-		<a class="group" rel="photo_group[<%= item.id %>]" href="<%= item.photo.url(:original) %>" title="<h1><%= item.title %></h1><br/><%= item.description %>">
-		<%= image_tag item.photo.url(:thumb) %><br/>
-		<% if user_signed_in? && current_user.id == @collection.user.id.to_i %>
-		<%= link_to image_tag("delete.png", :id => "deleteItem"), item, confirm: 'Are you sure you want to delete item?', method: :delete %>
-		<% end %>
-		</a>
+<% if !@collection.visibility %>
+	<div id="collectionDataPhotos">
+	<% @collection.items.each do |item| %> 
+		<div id="photo">
+			<a class="group" rel="photo_group[<%= item.id %>]" href="<%= item.photo.url(:original) %>" title="<h1><%= item.title %></h1><br/><%= item.description %>">
+			<%= image_tag item.photo.url(:thumb) %><br/>
+			<% if user_signed_in? && current_user == @collection.user %>
+			<%= link_to image_tag("delete.png", :id => "deleteItem"), item, confirm: 'Are you sure you want to delete item?', method: :delete %>
+			<% end %>
+			</a>
+		</div>
+	<% end %>
 	</div>
-<% end %>
-</div>
-<div>
-<%= link_to 'Edit', edit_collection_path(@collection) %>
-<%= link_to 'Back', collections_path %> 
+<% else %>
+	<% if user_signed_in? && @collection.user.users.include?(current_user) %>
+	<div id="collectionDataPhotos">
+	<% @collection.items.each do |item| %> 
+		<div id="photo">
+			<a class="group" rel="photo_group[<%= item.id %>]" href="<%= item.photo.url(:original) %>" title="<h1><%= item.title %></h1><br/><%= item.description %>">
+			<%= image_tag item.photo.url(:thumb) %><br/>
+			<% if user_signed_in? && current_user == @collection.user %>
+			<%= link_to image_tag("delete.png", :id => "deleteItem"), item, confirm: 'Are you sure you want to delete item?', method: :delete %>
+			<% end %>
+			</a>
+		</div>
+	<% end %>
+	</div>
+	<% else %>
+	You don't have access to this collection. Add this user as a friend.<br/>
+	<% end %>
+<% end %><br />
+<%= link_to 'Back', :back %> 
 </div>

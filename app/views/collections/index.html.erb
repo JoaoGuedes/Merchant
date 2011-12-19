@@ -24,19 +24,43 @@
 			<%= image_tag "public.png", :alt => "Public collection", :id => "collectionVis" %>
 			<% end %>
 			
-			
 			<!--<%= collection.created_at %>--><br /> 
-
-			<div id="collectionDataPhotos">
-				<% collection.items[0,6].each do |item| %>
-					<div id="photo">
-					<a class="group" rel="photo_group[<%= collection.id %>]" href="<%= item.photo.url(:original) %>" title="<h1><%= item.title %></h1><br/><%= item.description %>">
-					<%= image_tag item.photo.url(:thumb) %><br/>
-					</a>
-					</div>
-				<% end %>					
-				<%= link_to "...", collection %>
-			</div>
+			<% if !collection.visibility %>
+			
+				<div id="collectionDataPhotos">
+					<% collection.items[0,6].each do |item| %>
+						<div id="photo">
+						<a class="group" rel="photo_group[<%= collection.id %>]" href="<%= item.photo.url(:original) %>" title="<h1><%= item.title %></h1><br/><%= item.description %>">
+						<%= image_tag item.photo.url(:thumb) %><br/>
+						<% if user_signed_in? && current_user == item.collection.user %>
+							<%= link_to image_tag("delete.png", :id => "deleteItem"), item, confirm: 'Are you sure you want to delete item?', method: :delete %>
+						<% end %>
+						</a>
+						</div>
+					<% end %>					
+					<%= link_to "...", collection %>
+				</div>
+			<% else %>					
+				<% if user_signed_in? && (collection.user.users.include?(current_user) || collection.user == current_user) %>			
+					<div id="collectionDataPhotos">
+						<% collection.items[0,6].each do |item| %>
+							<div id="photo">
+							<a class="group" rel="photo_group[<%= collection.id %>]" href="<%= item.photo.url(:original) %>" title="<h1><%= item.title %></h1><br/><%= item.description %>">
+							<%= image_tag item.photo.url(:thumb) %><br/>
+							<% if user_signed_in? && current_user == item.collection.user %>
+								<%= link_to image_tag("delete.png", :id => "deleteItem"), item, confirm: 'Are you sure you want to delete item?', method: :delete %>
+							<% end %>
+							</a>
+							</div>
+						<% end %>					
+						<%= link_to "...", collection %>
+					</div>			
+				<% else %>
+				This collection is private, add this user as a friend to see his private collections.
+				<% end %>
+			
+			<% end %>
+			
 	</div>
 </div>
 <br/>
