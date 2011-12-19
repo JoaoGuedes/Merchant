@@ -21,4 +21,9 @@ class Item < ActiveRecord::Base
       false
     end
   end
+  
+  def url_thumb
+          photo.url(:thumb)
+  end
+  
 end
