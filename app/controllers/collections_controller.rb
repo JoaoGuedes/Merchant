@@ -53,12 +53,8 @@ class CollectionsController < ApplicationController
                 :only => :name
               },
               :items => {
-                :include => {
-                    :photo => {
-                      :only => :url
-                    }
-                  },
-                :only => :title
+                :only => :title,
+                :methods => [:url_thumb]
               }
           },
 
@@ -82,12 +78,8 @@ class CollectionsController < ApplicationController
                 :only => :name
               },
               :items => {
-                :include => {
-                    :photo => {
-                      :only => :url
-                    }
-                  },
-                :only => :title
+                :only => :title,
+                :methods => [:url_thumb]
               }
           },
 

@@ -31,15 +31,8 @@ class ItemsController < ApplicationController
       format.html # showbyid.html.erb
 
       format.json { 
-        render :json => @items.to_json(
-          :include => {
-              :photo => { 
-                :only => :url_thumb
-              }
-            },
-            
-          :only => [:id, :title, :description, :tradeable, :sellable, :collection_id, :created_at ]
-          
+        render :json => @items.to_json(          
+          :only => [:id, :title, :description, :tradeable, :sellable, :collection_id, :created_at ], :methods => [:url_thumb, :url_original]          
           )
       }
     end

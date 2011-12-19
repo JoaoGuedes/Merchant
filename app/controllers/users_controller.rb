@@ -12,8 +12,8 @@ class UsersController < ApplicationController
     end
     
     def destroy_friends
-        friend_record = Invite.where("user_id=? AND user_id_target=? OR user_id_target= ? AND user_id = ?", params[:friend_id], current_user.id, current_user.id, params[:friend_id])
-        friend_record.delete
+        record = Invite.where("(user_id=? AND user_id_target=?) OR (user_id_target= ? AND user_id = ?)", params[:friend_id], current_user.id, current_user.id, params[:friend_id])
+        record.destroy_all
         respond_to do |format|
             format.html { redirect_to :back, notice: 'Friend deleted.' }
           end
