@@ -12,7 +12,7 @@
 	<div id="collectionDataPhotos">
 	<% @collection.items.each do |item| %> 
 		<div id="photo">
-			<a class="group" rel="photo_group[<%= item.id %>]" href="<%= item.photo.url(:original) %>" title="<h1><%= item.title %></h1><br/><%= item.description %>">
+			<a class="group" rel="photo_group" href="<%= item.photo.url(:original) %>" title="<h1><%= item.title %></h1><br/><%= item.description %>">
 			<%= image_tag item.photo.url(:thumb) %><br/>
 			<% if user_signed_in? && current_user == @collection.user %>
 			<%= link_to image_tag("delete.png", :id => "deleteItem"), item, confirm: 'Are you sure you want to delete item?', method: :delete %>
@@ -26,7 +26,7 @@
 	<div id="collectionDataPhotos">
 	<% @collection.items.each do |item| %> 
 		<div id="photo">
-			<a class="group" rel="photo_group[<%= item.id %>]" href="<%= item.photo.url(:original) %>" title="<h1><%= item.title %></h1><br/><%= item.description %>">
+			<a class="group" rel="photo_group" href="<%= item.photo.url(:original) %>" title="<h1><%= item.title %></h1><br/><%= item.description %>">
 			<%= image_tag item.photo.url(:thumb) %><br/>
 			<% if user_signed_in? && current_user == @collection.user %>
 			<%= link_to image_tag("delete.png", :id => "deleteItem"), item, confirm: 'Are you sure you want to delete item?', method: :delete %>
