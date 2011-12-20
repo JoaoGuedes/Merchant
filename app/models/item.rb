@@ -4,7 +4,7 @@ class Item < ActiveRecord::Base
   attr_accessible :photo, :title, :description, :tradeable, :sellable
   has_attached_file :photo, 
     :styles =>{
-      :thumb  => "64x64",
+      :thumb  => "64x64!",
     },
     :storage => :s3,
     :bucket => 'MerchantCollections',
