@@ -15,4 +15,17 @@
   <%= @user.about %>
 </p>
 
+<div id="dialog" title="Send message">
+	<form>
+	<fieldset>
+		<label for="name">Subject</label>
+		<input type="text" name="name" id="name" class="text ui-widget-content ui-corner-all" />
+		<textarea name="email" id="email" value="" class="text ui-widget-content ui-corner-all"></textarea>
+	</fieldset>
+	</form>
+</div>
+
+
+<button class="clean-gray" onClick="window.location.href='<%= url_for :controller => '/collections', :action => :showbyuser, :id => @user.id %>'">Browse collections</button><br/>
+<button id="opener" class="clean-gray">Send message</button><br/><br/>
 <%= link_to 'Back', :back %>

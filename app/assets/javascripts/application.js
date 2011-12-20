@@ -33,3 +33,19 @@ $(document).ready(function() {
     $("#newCollection").formToWizard({ submitButton: 'commit' })
 				
 });
+
+$(function() {
+	$( "#dialog" ).dialog({
+		autoOpen: false,
+		show: "blind",
+		resizable: false,
+		height: 300,
+		width: 370,
+		modal: true,
+	})
+
+	$( "#opener" ).click(function() {
+		$( "#dialog" ).dialog( "open" );
+		return false;
+	});
+});

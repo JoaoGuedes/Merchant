@@ -5,6 +5,7 @@
  *= require fancybox
  *= require jquery.qtip
  *= require jquery.qtip.min
+ *= require jquery-ui
  */
 
 body {
