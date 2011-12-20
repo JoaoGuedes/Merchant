@@ -5,7 +5,7 @@
 
 	<div id="userInfo">
 	    <%= image_tag friend.photo.url(:thumb) %>
-			<h1><%= friend.name %></h1>
+			<h1><%= link_to friend.name, :controller => :users, :action => :info, :id => friend.id %></h1>
 			<%= link_to "delete", :controller => "/users", :action => "destroy_friends", :friend_id => friend.id %>
 	</div>
 

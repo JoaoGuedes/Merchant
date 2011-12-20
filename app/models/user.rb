@@ -18,6 +18,7 @@ class User < ActiveRecord::Base
     },
     :storage => :s3,
     :bucket => 'Merchant',
+    :default_url => '/missing.png',
     :s3_credentials => {
       :access_key_id => 'AKIAI6OYMDHDZQTW2NOQ',
       :secret_access_key => '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'

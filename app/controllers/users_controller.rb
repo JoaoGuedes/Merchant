@@ -1,13 +1,22 @@
 class UsersController < ApplicationController
   before_filter :authenticate_user!, :only => [:show_friends, :destroy_friends]
   
+  def info
+    @user = User.find(params[:id])
+    
+    respond_to do |format|
+      format.html # info.html.erb
+      format.json { render json: @user }
+    end
+  end
+  
   def show_friends
       user = User.find(params[:id])
       @friends = user.users
       
       respond_to do |format|
-        format.html # show.html.erb
-        format.json { render json: @invites }
+        format.html # show_friends.html.erb
+        format.json { render json: @friends }
       end
     end
     

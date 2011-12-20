@@ -12,6 +12,7 @@ Site::Application.routes.draw do
   
   get '/users/show_friends' => 'users#show_friends'
   match '/users/destroy_friends' => 'users#destroy_friends'
+  match '/users/info/' => 'users#info'
   
   match 'items/byCollection/:id' => 'items#showbyid'
   resources :items

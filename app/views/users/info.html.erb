@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+
+  <%= image_tag @user.photo.url(:original) %>
+
+<p>
+  <h2>Name: <%= @user.name %></h2>
+</p>
+
+<p>
+  <h2>City: <%= @user.city %></h2>
+</p>
+
+<p>
+  <h2>About me:</h2>
+  <%= @user.about %>
+</p>
+
+<%= link_to 'Back', :back %>

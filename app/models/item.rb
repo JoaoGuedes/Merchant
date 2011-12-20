@@ -7,6 +7,7 @@ class Item < ActiveRecord::Base
       :thumb  => "64x64!",
     },
     :storage => :s3,
+    :default_url => '/missing.png',
     :bucket => 'MerchantCollections',
     :s3_credentials => {
       :access_key_id => 'AKIAI6OYMDHDZQTW2NOQ',

@@ -7,7 +7,7 @@
 	<div class="collectionWrapper">
 		<div id="userInfo">
 		    <%= image_tag collection.user.photo.url(:thumb) %>
-				<h1><%= collection.user.name %></h1>
+				<h1><%= link_to collection.user.name, :controller => :users, :action => :info, :id => collection.user.id %></h1>
 				<% if user_signed_in? && current_user.has_not_reached(collection.user) %>
 				<%= link_to "Add as friend", :controller => :invite, :action => :create, :dest_id => collection.user.id %>
 				<% end %>
