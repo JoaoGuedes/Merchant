@@ -201,6 +201,7 @@ div#collectionDataPhotos {
 }
 
 div#collectionDataPhotos div#photo {
+	margin-left: 3px;
 	display: block;
 	width: 64px;
 	float: left;
