@@ -21,6 +21,8 @@ Site::Application.routes.draw do
 
   resources :administrations
 
+  resources :searchadvanced
+
   resources :categories
 
   #match 'collections/byUserMail/:email' => 'collections#showbymail', :email => /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/
