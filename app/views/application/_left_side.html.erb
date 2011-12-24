@@ -1,17 +1,19 @@
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
+<h1>My account</h1>
+<p>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
 
-<% if user_signed_in? %>
-    <%= image_tag current_user.photo.url(:thumb) %>
-  <br>
-  <%= link_to current_user.name, edit_user_registration_path %><br />
-  <%= link_to "Sign out", destroy_user_session_path, :method => :delete %><br><br>
-<button class="clean-gray" onClick="window.location.href='<%= collections_path + "/byUser/" + current_user.id.to_s %>'">My Collections</button>
-<button class="clean-gray" onClick="window.location.href='<%= url_for :controller => '/invite', :action => :show, :id => current_user.id %>'">(<%= current_user.get_new_invites_count %>) Friend Requests</button>
-<button class="clean-gray" onClick="window.location.href='<%= url_for :controller => '/users', :action => :show_friends, :id => current_user.id %>'">My Friends</button>
-<button class="clean-gray">Messages</button>
-<% else %>
-  <%= link_to "Sign up", new_user_registration_path %> or <%= link_to "sign in", new_user_session_path %><br><br>
-  <%= link_to image_tag("signin_facebook.png"), user_omniauth_authorize_path(:facebook) %>
-<% end %>
-
+    <% if user_signed_in? %>
+        <%= image_tag current_user.photo.url(:thumb) %>
+        <br>
+        <%= link_to current_user.name, edit_user_registration_path %><br />
+        <%= link_to "Sign out", destroy_user_session_path, :method => :delete %><br><br>
+        <button class="clean-gray" onClick="window.location.href='<%= collections_path + "/byUser/" + current_user.id.to_s %>'">My Collections</button>
+        <button class="clean-gray" onClick="window.location.href='<%= url_for :controller => '/invite', :action => :show, :id => current_user.id %>'">(<%= current_user.get_new_invites_count %>) Friend Requests</button>
+        <button class="clean-gray" onClick="window.location.href='<%= url_for :controller => '/users', :action => :show_friends, :id => current_user.id %>'">My Friends</button>
+        <button class="clean-gray">Messages</button>
+    <% else %>
+        <%= link_to "Sign up", new_user_registration_path %> or <%= link_to "sign in", new_user_session_path %><br><br>
+        <%= link_to image_tag("signin_facebook.png"), user_omniauth_authorize_path(:facebook) %>
+    <% end %>
+</p>

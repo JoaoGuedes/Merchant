@@ -1,48 +1,42 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
 "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
-<head>
-<title>Merchant</title>
-<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
-<%= stylesheet_link_tag    "application" %>
-<%= javascript_include_tag "application" %>
-<%= csrf_meta_tags %>
+    <head>
+        <title>Merchant</title>
+        <meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+        <%= stylesheet_link_tag    "application" %>
+        <%= javascript_include_tag "application" %>
+        <%= csrf_meta_tags %>
+    </head>
 
-</head>
+    <body>
 
-<body>
+        <div id="container">
 
-<div id="container">
+            <div id="sitename">
+                <h1>merchant</h1>
+            </div>
 
-	<div id="sitename">
-		<h1>merchant</h1>
-	</div>
+            <div id="subcontainer">
+                <div id="wrap">
 
-	<div id="subcontainer">
-		<div id="wrap">
+                    <div id="leftside">
+                        <%= render "left_side" %>
+                    </div>
 
-			<div id="leftside">
-				<h1>My account</h1>
-				<p>	<%= render "left_side" %></p>
-			</div>	
+                    <div class="content">
+                        <%= yield %>
+                    </div>
 
-		<div class="content">
-			<%= yield %>
-		</div>
+                    <div id="rightside">
+                        <%= render "right_side" %>
+                    </div>
+                </div>
 
-		<div id="rightside">
-			<h1>Categories</h1>
-			<div id="categories">
-				<ul>
-					<%= render "right_side" %>
-				</ul>
-			</div>
-		</div>
-	</div>
-	
-	<div class="clearingdiv">&nbsp;</div>
-</div>
+                <div class="clearingdiv">&nbsp;</div>
+            </div>
 
-<div id="footer">&copy; 2011 Merchant | All Rights Reserved</div>
-</body>
+            <div id="footer">&copy; 2011 Merchant | All Rights Reserved</div>
+        </div>
+    </body>
 </html>

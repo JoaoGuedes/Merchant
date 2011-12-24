@@ -4,7 +4,9 @@ class CollectionsController < ApplicationController
   before_filter :authenticate_user!, :only => [:new, :edit, :create, :update, :destroy]
   
   def index
-    @collections = Collection.all
+    @search = Collection.search(params[:search])
+    @collections = @search.all
+    # @collections = Collection.all
 
     respond_to do |format|
       format.html # index.html.erb

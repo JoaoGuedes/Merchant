@@ -17,16 +17,16 @@
 			<%= link_to collection.title, collection %>
 		</div>
 		<div id="collectionDescription"><%= collection.description %></div>
-		
+
 		<% if collection.visibility %>
 			<%= image_tag "private.png", :alt => "Private collection", :id => "collectionVis" %>
 			<% else %>
 			<%= image_tag "public.png", :alt => "Public collection", :id => "collectionVis" %>
 			<% end %>
-			
-			<!--<%= collection.created_at %>--><br /> 
+
+			<!--<%= collection.created_at %>--><br />
 			<% if !collection.visibility %>
-			
+
 				<div id="collectionDataPhotos">
 					<% collection.items[0,6].each do |item| %>
 						<div id="photo">
@@ -37,11 +37,11 @@
 						<% end %>
 						</a>
 						</div>
-					<% end %>					
+					<% end %>
 					<%= link_to "...", collection %>
 				</div>
-			<% else %>					
-				<% if user_signed_in? && (collection.user.users.include?(current_user) || collection.user == current_user) %>			
+			<% else %>
+				<% if user_signed_in? && (collection.user.users.include?(current_user) || collection.user == current_user) %>
 					<div id="collectionDataPhotos">
 						<% collection.items[0,6].each do |item| %>
 							<div id="photo">
@@ -52,15 +52,15 @@
 							<% end %>
 							</a>
 							</div>
-						<% end %>					
+						<% end %>
 						<%= link_to "...", collection %>
-					</div>			
+					</div>
 				<% else %>
 				This collection is private, add this user as a friend to see his private collections.
 				<% end %>
-			
+
 			<% end %>
-			
+
 	</div>
 </div>
 <br/>

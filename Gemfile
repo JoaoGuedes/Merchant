@@ -27,10 +27,12 @@ end
 # Gems to Admin in Rails >= 3.1
 gem 'activeadmin'
 gem 'sass-rails',   '~> 3.1.4'
-gem "meta_search",    '>= 1.1.0.pre'
+gem "meta_search"
 
 gem 'jquery-rails'
 gem "fancybox-rails"
+
+gem "squeel"
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

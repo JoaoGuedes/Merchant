@@ -27,6 +27,8 @@ Site::Application.routes.draw do
   match 'collections/byUserMail/:email' => 'collections#showbymail', :constraints => { :email => /[^\/]*/ }
   match 'collections/byUser/:id' => 'collections#showbyuser'
   match 'collections/byCategory/:name' => 'collections#showbyname'
+  match 'collections/searchadvanced' => 'collections#searchadvanced'
+
   
   get '/invite/create' => 'invite#create'
   get '/invite/show' => 'invite#show'

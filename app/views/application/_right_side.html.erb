@@ -1,9 +1,23 @@
-<% Category.all.each do |category| %>
-<li>
-	<%= link_to category.name, collections_path + "/byCategory/" + category.name %>
-</li>
-<% end %>
-<li>
-	<%= link_to "All", collections_path %>
-</li>
+<h1>Search</h1>
+<div id="search">
+  <%= form_for @search do |f| %>
+    <%= f.text_field :title_contains %>
+    <%= f.submit "Go!" %>
+  <% end %>
+</div>
+<p style="text-align: right;">Advanced</p>
+</br>
+<h1>Categories</h1>
+<div id="categories">
+  <ul>
+    <% Category.all.each do |category| %>
+    <li>
+        <%= link_to category.name, collections_path + "/byCategory/" + category.name %>
+    </li>
+    <% end %>
+    <li>
+        <%= link_to "All", collections_path %>
+    </li>
+  </ul>
+</div>
 
