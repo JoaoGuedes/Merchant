@@ -346,19 +346,19 @@ box-shadow: 0 1px #eee, 0 1px #fff inset;
 -webkit-box-shadow: 0 1px #eee, 0 1px #fff inset;
 }
 
-#rightside search{
+div#rightside search{
 margin:0;
 text-indent:0;
 }
 
-#search input[type="text"] {
+div#search input[type="text"] {
 height:30px;
 width:100px;
 margin:0;
 padding: 0;
 }
 
-#search input[type="submit"] {
+div#search input[type="submit"] {
 height:30px;
 margin:0;
 padding: 0;
