@@ -13,10 +13,10 @@
   </br><%= f.label "Category:" %>
   <%= f.collection_select :category_name_contains, Category.all, :name, :name, :include_blank => true %>
 
-  </br><%= f.label :created_at_greater_than, "Created from:" %>
-  <%= f.datetime_select :created_at_greater_than, :include_blank => true %>
+  </br><%= f.label :created_at_greater_than, "From:" %>
+  <%= f.date_select :created_at_greater_than, :include_blank => true %>
   </br><%= f.label :created_at_less_than, "To:" %>
-  <%= f.datetime_select :created_at_less_than, :include_blank => true %>
+  <%= f.date_select :created_at_less_than %>
 
   <p><%= f.submit "Search" %></p>
 
