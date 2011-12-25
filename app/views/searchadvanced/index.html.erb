@@ -1,0 +1,23 @@
+<h1 style="text-align:center">Advanced Collection Search</h1>
+
+<%= form_for @search do |f| %>
+  <%= f.text_field :title_contains, :placeholder => "Title" %>
+  <%= f.text_field :description_contains, :placeholder => "Description" %>
+  <%= f.text_field :user_name_contains , :placeholder => "User Name" %>
+
+  </br><%= f.label "Public" %>
+  <%= f.check_box :visibility_is_false %>
+  <%= f.label "Private" %>
+  <%= f.check_box :visibility_is_true %>
+
+  </br><%= f.label "Category:" %>
+  <%= f.collection_select :category_name_contains, Category.all, :name, :name, :include_blank => true %>
+
+  </br><%= f.label :created_at_greater_than, "Created from:" %>
+  <%= f.datetime_select :created_at_greater_than, :include_blank => true %>
+  </br><%= f.label :created_at_less_than, "To:" %>
+  <%= f.datetime_select :created_at_less_than, :include_blank => true %>
+
+  <p><%= f.submit "Search" %></p>
+
+<% end %>
